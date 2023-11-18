@@ -1,0 +1,55 @@
+header {
+    background-color: rgb(227, 45, 83);
+    color: white;
+}
+
+/* Desktop */
+@media screen and (min-width: 1280px) {
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px 0 10px 0;
+    }
+
+    .header-blank {
+        margin-left: 2vw;
+    }
+
+    .header-logout {
+        margin-right: 2vw;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    header {
+        padding: 1vh 0 1vh 0;
+        text-align: center;
+    }
+}
+
+/* iPad Pro */
+@media screen and (max-width: 1024px) {
+
+}
+
+/* iPad Air */
+@media screen and (max-width: 820px) {
+    
+}
+
+/* Surface Duo */
+@media screen and (max-width: 540px) {
+    
+}
+
+/* iPhone 14 Pro Max */
+@media screen and (max-width: 430px) {
+    
+}
+
+/* iPhone 12 Pro */
+@media screen and (max-width: 390px) {
+    
+}
