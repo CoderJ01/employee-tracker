@@ -37,3 +37,17 @@ function getUser(response, setData) {
         }
     }
 }
+
+export function postInfo(route, infoObj, id) {
+    if(id) {
+        axios.post(`${baseURL_server}/${route}/${id}`, {
+            info: infoObj
+        })
+        .then(response => {
+            console.log(response);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    }
+}
