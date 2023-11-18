@@ -7,6 +7,7 @@ import cookie from 'js-cookie';
 
 const baseURL_server = '';
 
+// GET
 export function GetInfo(route, user = false) {
     const [data, setData] = useState([]);
 
@@ -38,6 +39,7 @@ function getUser(response, setData) {
     }
 }
 
+// POST
 export function postInfo(route, infoObj, id) {
     if(id) {
         axios.post(`${baseURL_server}/${route}/${id}`, {
