@@ -51,3 +51,22 @@ export function postInfo(route, infoObj, id) {
         });
     }
 }
+
+export function loginUser(route, username, password) {
+    axios.post(`${baseURL_server}/${route}`, 
+    {
+        username: username,
+        password: password,
+    },
+    {
+        withCredentials: true,
+        credentials: 'include'
+    })
+    .then(response => {
+        console.log(response);
+        window.location.reload(false);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+}
