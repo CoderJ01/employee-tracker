@@ -33,7 +33,7 @@ export function GetInfo(route, user = false) {
 function getUser(response, setData) {
     let userCookie = cookie.get('employee-tracker-cookie');
     for(let i = 0; i < response.data.length; i++) {
-        if(response.data[i].random_string === userCookie) {
+        if(response.data[i].randomString === userCookie) {
             setData(response.data[i]);
         }
     }
