@@ -17,7 +17,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 2vh;
+    margin-top: 1vh;
 }
 
 .employees-submit-button button {
@@ -30,6 +30,10 @@
 
 .employees-submit-button button:active {
     opacity: 0.7;
+}
+
+.employees-submit-button {
+    margin-top: 1vh;
 }
 
 /* Desktop */
@@ -68,10 +72,6 @@
         margin-left: 25%;
         margin-top: 2vh;
         width: 50%;
-    }
-
-    .employees-submit-button {
-        margin-top: 1vh;
     }
 
     .employees-submit-button button {
