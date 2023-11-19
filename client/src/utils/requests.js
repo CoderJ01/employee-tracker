@@ -1,6 +1,9 @@
 // React
 import { useState, useEffect, useCallback } from 'react';
 
+// setCookie
+import setCookie from './setCookie';
+
 // other imports
 import axios from 'axios';
 import cookie from 'js-cookie';
@@ -65,6 +68,7 @@ export function loginUser(route, username, password) {
         credentials: 'include'
     })
     .then(response => {
+        setCookie('employee-tracker-cookie', response.data.data.randomString, 1);
         console.log(response);
         window.location.reload(false);
     })
