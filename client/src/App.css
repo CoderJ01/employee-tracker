@@ -3,6 +3,11 @@
     font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
 
+input {
+    border: 1px solid gray;
+    width: 80%;
+}
+
 /* Desktop */
 @media screen and (min-width: 1280px) {
 
@@ -29,7 +34,8 @@
     }
 
     td,
-    th {
+    th,
+    input {
         font-size: 20px;
     }
 }
@@ -72,7 +78,8 @@
     }
 
     td,
-    th {
+    th,
+    input {
         font-size: 15px;
     }
 }
