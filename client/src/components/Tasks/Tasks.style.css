@@ -4,6 +4,11 @@
     margin-top: 2vh;
 }
 
+.task input,
+.task textarea {
+    width: 50%;
+}
+
 /* Desktop */
 @media screen and (min-width: 1280px) {
     .tasks {
