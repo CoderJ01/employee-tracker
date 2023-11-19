@@ -13,6 +13,19 @@
     text-align: center;
 }
 
+.employees-add {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fa-plus-circle {
+    color: rgb(227, 45, 83);
+}
+
+.fa-plus-circle:active {
+    opacity: 0.7;
+}
+
 /* Desktop */
 @media screen and (min-width: 1280px) {
     .employees {
@@ -24,6 +37,14 @@
         border: 2px solid rgba(54, 69, 79, 1);
         width: 100%;
     }
+
+    .employees-add {
+        justify-content: right;
+    }
+
+    .fa-plus-circle {
+        font-size: 30px;
+    }
 }
 
 @media screen and (max-width: 1279px) {
@@ -32,6 +53,14 @@
         border-radius: 10px;
         margin-left: 10%;
         width: 80%;
+    }
+
+    .employees-add {
+        justify-content: center;
+    }
+
+    .fa-plus-circle {
+        font-size: 50px;
     }
 }
 
@@ -51,7 +80,9 @@
 
 /* Surface Duo */
 @media screen and (max-width: 540px) {
-
+    .fa-plus-circle {
+        font-size: 40px;
+    }
 }
 
 /* iPhone 14 Pro Max */
