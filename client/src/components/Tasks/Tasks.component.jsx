@@ -1,3 +1,6 @@
+// React
+import { useState } from 'react';
+
 // CSS
 import './Tasks.style.css';
 
@@ -5,6 +8,8 @@ import './Tasks.style.css';
 import AddButton from '../AddButton/AddButton.component';
 
 function Tasks() {
+    const [display, setDisplay] = useState(false);
+
     return (
         <div className='tasks'>
             <div className='task'>
@@ -31,14 +36,19 @@ function Tasks() {
                 <p>Date</p>
                 <br/>
             </div>
-            <div className='task'>
-                <h2>Title: <input type='text' name='title'/></h2>
-                <p style={{ fontWeight: 'bold' }}>Description:</p>
-                <textarea name='description'/>
-                <br/>
-            </div>
+            {
+                !display ? ('') :
+                (
+                    <div className='task'>
+                        <h2>Title: <input type='text' name='title'/></h2>
+                        <p style={{ fontWeight: 'bold' }}>Description:</p>
+                        <textarea name='description'/>
+                        <br/>
+                    </div>
+                )
+            }
             <br/>
-            <AddButton/>
+            <AddButton setDisplay={setDisplay}/>
         </div>
     );
 }
