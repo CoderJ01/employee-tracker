@@ -1,14 +1,14 @@
-.employees table {
+.employees-desktop {
     background: rgb(54,69,79);
     background: linear-gradient(90deg, rgba(54,69,79,1) 0%, rgba(129,133,137,1) 50%, rgba(54,69,79,1) 100%);
 }
 
-.employees th {
+.employees-desktop th {
     color: white;
     font-weight: bold;
 }
 
-.employees td {
+.employees-desktop td {
     background-color: white;
     text-align: center;
 }
@@ -19,7 +19,7 @@
         width: 55%;
     }
 
-    .employees table {
+    .employees-desktop {
         border-radius: 5px;
         border: 2px solid rgba(54, 69, 79, 1);
         width: 100%;

@@ -7,7 +7,7 @@ import Add from '../AddButton/AddButton.component';
 function Employees() {
     return (
         <div className='employees'>
-            <table>
+            <table className='employees-desktop'>
                 <tr>
                     <th>Last Name</th>
                     <th>First Name</th>
