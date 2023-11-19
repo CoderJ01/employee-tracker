@@ -76,3 +76,15 @@ export function loginUser(route, username, password) {
         console.log(error);
     });
 }
+
+// DELETE
+export function deleteInfo(route, id) {
+    if(id) {
+        try {
+            axios.delete(`${baseURL_server}/${route}`);
+        }
+        catch(error) {
+            console.log(error);
+        }
+    }
+}
