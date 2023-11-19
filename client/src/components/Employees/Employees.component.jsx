@@ -41,6 +41,9 @@ function Employees() {
                     <td>$90,000</td>
                 </tr>
             </table>
+            <div className='employees-add'>
+                <i className='fa fa-plus-circle'></i>
+            </div>
         </div>
     )
 }
