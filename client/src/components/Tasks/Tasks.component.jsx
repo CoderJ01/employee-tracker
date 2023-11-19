@@ -28,7 +28,7 @@ function Tasks() {
                 <p>Date</p>
                 <br/>
             </div>
-            <div className='employees-add'>
+            <div className='add'>
                 <i className='fa fa-plus-circle'></i>
             </div>
         </div>
