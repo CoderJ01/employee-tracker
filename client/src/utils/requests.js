@@ -78,10 +78,10 @@ export function loginUser(route, username, password) {
 }
 
 // DELETE
-export function deleteInfo(route, id) {
+export async function deleteInfo(route, id) {
     if(id) {
         try {
-            axios.delete(`${baseURL_server}/${route}`);
+            await axios.delete(`${baseURL_server}/${route}`);
         }
         catch(error) {
             console.log(error);
