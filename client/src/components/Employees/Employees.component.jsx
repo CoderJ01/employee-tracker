@@ -98,6 +98,7 @@ function Employees() {
             {
                 !display ? ('') : 
                 (
+                    <>
                     <table className='employees-mobile'>
                         <tr>
                             <th>Last Name:</th>
@@ -124,11 +125,12 @@ function Employees() {
                             <td><input type='text' name='salary'/></td>
                         </tr>
                     </table>
+                    <div className='employees-submit-button'>
+                        <button>Submit</button>
+                    </div>
+                    </>
                 )
             }
-            <div className='employees-submit-button'>
-                <button>Submit</button>
-            </div>
             <AddButton setDisplay={setDisplay}/>
         </div>
     )
