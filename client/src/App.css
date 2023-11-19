@@ -36,7 +36,7 @@ input {
     td,
     th,
     input {
-        font-size: 20px;
+        font-size: 15px;
     }
 }
 
@@ -58,7 +58,11 @@ input {
 
 /* iPhone 14 Pro Max */
 @media screen and (max-width: 430px) {
-    
+    td,
+    th,
+    input {
+        font-size: 10px;
+    }
 }
 
 /* iPhone 12 Pro */
@@ -75,11 +79,5 @@ input {
     a,
     text {
         font-size: 20px;
-    }
-
-    td,
-    th,
-    input {
-        font-size: 15px;
     }
 }
