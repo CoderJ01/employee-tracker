@@ -83,6 +83,32 @@ function Employees() {
                     <td>$90,000</td>
                 </tr>
             </table>
+            <table className='employees-mobile'>
+                <tr>
+                    <th>Last Name:</th>
+                    <td><input type='text' name='lastname'/></td>
+                </tr>
+                <tr>
+                    <th>First Name:</th>
+                    <td><input type='text' name='firstname'/></td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td><input type='text' name='email'/></td>
+                </tr>
+                <tr>
+                    <th>Position:</th>
+                    <td><input type='text' name='position'/></td>
+                </tr>
+                <tr>
+                    <th>Industry:</th>
+                    <td><input type='text' name='industry'/></td>
+                </tr>
+                <tr>
+                    <th>Salary:</th>
+                    <td><input type='text' name='salary'/></td>
+                </tr>
+            </table>
             <Add/>
         </div>
     )
