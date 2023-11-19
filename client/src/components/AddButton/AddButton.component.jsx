@@ -1,10 +1,10 @@
 // CSS
 import './AddButton.style.css';
 
-function AddButton() {
+function AddButton({ setDisplay }) {
     return (
         <div className='add-button'>
-            <i className='fa fa-plus-circle'></i>
+            <i className='fa fa-plus-circle' onClick={() => setDisplay(true)}></i>
         </div>
     );
 }
