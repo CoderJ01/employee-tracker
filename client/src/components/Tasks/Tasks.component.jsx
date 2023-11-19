@@ -33,7 +33,7 @@ function Tasks() {
             </div>
             <div className='task'>
                 <h2>Title: <input type='text' name='title'/></h2>
-                <p>Description:</p>
+                <p style={{ fontWeight: 'bold' }}>Description:</p>
                 <textarea name='description'/>
                 <br/>
             </div>

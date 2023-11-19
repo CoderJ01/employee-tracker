@@ -6,6 +6,8 @@
 
 .task input,
 .task textarea {
+    border: 1px rgb(227, 45, 83) solid;
+    border-radius: 10px;
     width: 50%;
 }
 

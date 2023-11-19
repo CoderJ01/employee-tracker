@@ -32,7 +32,8 @@ input {
     text,
     td,
     th,
-    input {
+    input,
+    textarea {
         font-size: 25px;
     }
 }
@@ -70,7 +71,11 @@ input {
 
     p,
     a,
-    text {
+    text,
+    td,
+    th,
+    input,
+    textarea {
         font-size: 20px;
     }
 }
