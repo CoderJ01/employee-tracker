@@ -9,7 +9,6 @@ import AddButton from '../AddButton/AddButton.component';
 
 function Employees() {
     const [display, setDisplay] = useState(false);
-    console.log(display);
 
     return (
         <div className='employees'>
