@@ -43,6 +43,13 @@ function Employees() {
                     <td>Information Technology</td>
                     <td>$90,000</td>
                 </tr>
+                <tr>
+                    <td><input type='text' name='lastname'/></td>
+                    <td><input type='text' name='firstname'/></td>
+                    <td><input type='text' name='position'/></td>
+                    <td><input type='text' name='industry'/></td>
+                    <td><input type='text' name='salary'/></td>
+                </tr>
             </table>
             <Add/>
         </div>
