@@ -1,5 +1,6 @@
 @media screen and (max-width: 1279px) {
     body {
-        background-color: rgba(227, 45, 83, 0.1);
+        background: rgb(189,88,109);
+        background: linear-gradient(90deg, rgba(189,88,109,0.4) 0%, rgba(255,45,83,0.4) 50%, rgba(189,88,109,0.4) 100%);
     } 
 }
