@@ -27,7 +27,7 @@
 }
 
 .fa-plus-circle:active {
-    opacity: 0.7;
+    color: rgba(227, 45, 83, 0.5);
 }
 
 /* Desktop */
