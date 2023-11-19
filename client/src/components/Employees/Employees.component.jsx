@@ -1,6 +1,9 @@
 // CSS
 import './Employees.style.css';
 
+// components
+import Add from '../AddButton/AddButton.component';
+
 function Employees() {
     return (
         <div className='employees'>
@@ -41,9 +44,7 @@ function Employees() {
                     <td>$90,000</td>
                 </tr>
             </table>
-            <div className='add'>
-                <i className='fa fa-plus-circle'></i>
-            </div>
+            <Add/>
         </div>
     )
 }

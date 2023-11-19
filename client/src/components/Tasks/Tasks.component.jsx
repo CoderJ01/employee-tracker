@@ -1,6 +1,9 @@
 // CSS
 import './Tasks.style.css';
 
+// components
+import Add from '../AddButton/AddButton.component';
+
 function Tasks() {
     return (
         <div className='tasks'>
@@ -28,9 +31,8 @@ function Tasks() {
                 <p>Date</p>
                 <br/>
             </div>
-            <div className='add' style={{ marginTop: '2vh' }}>
-                <i className='fa fa-plus-circle'></i>
-            </div>
+            <br/>
+            <Add/>
         </div>
     );
 }
