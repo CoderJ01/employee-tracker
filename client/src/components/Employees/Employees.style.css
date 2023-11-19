@@ -18,6 +18,10 @@
     flex-wrap: wrap;
 }
 
+.employees-add {
+    justify-content: center;
+}
+
 .fa-plus-circle {
     color: rgb(227, 45, 83);
 }
@@ -38,10 +42,6 @@
         width: 100%;
     }
 
-    .employees-add {
-        justify-content: right;
-    }
-
     .fa-plus-circle {
         font-size: 30px;
     }
@@ -53,10 +53,6 @@
         border-radius: 10px;
         margin-left: 10%;
         width: 80%;
-    }
-
-    .employees-add {
-        justify-content: center;
     }
 
     .fa-plus-circle {
