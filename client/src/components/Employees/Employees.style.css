@@ -1,14 +1,14 @@
-.employees-desktop {
+.employees table {
     background: rgb(54,69,79);
     background: linear-gradient(90deg, rgba(54,69,79,1) 0%, rgba(129,133,137,1) 50%, rgba(54,69,79,1) 100%);
 }
 
-.employees-desktop th {
+.employees th {
     color: white;
     font-weight: bold;
 }
 
-.employees-desktop td {
+.employees td {
     background-color: white;
     text-align: center;
 }
@@ -24,11 +24,20 @@
         border: 2px solid rgba(54, 69, 79, 1);
         width: 100%;
     }
+
+    .employees-mobile {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 1279px) {
     .employees-desktop {
         display: none;
+    }
+
+    .employees-mobile {
+        margin-left: 25%;
+        width: 50%;
     }
 }
 
