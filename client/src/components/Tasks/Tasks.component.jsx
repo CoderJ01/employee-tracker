@@ -28,7 +28,7 @@ function Tasks() {
                 <p>Date</p>
                 <br/>
             </div>
-            <div className='add'>
+            <div className='add' style={{ marginTop: '2vh' }}>
                 <i className='fa fa-plus-circle'></i>
             </div>
         </div>
