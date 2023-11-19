@@ -53,15 +53,24 @@
 
 /* Surface Duo */
 @media screen and (max-width: 540px) {
-
+    .employees-mobile {
+        margin-left: 10%;
+        width: 80%;
+    }
 }
 
 /* iPhone 14 Pro Max */
 @media screen and (max-width: 430px) {
-   
+    .employees-mobile {
+        margin-left: 5%;
+        width: 90%;
+    }
 }
 
 /* iPhone 12 Pro */
 @media screen and (max-width: 390px) {
-
+    .employees-mobile {
+        margin-left: 2%;
+        width: 96%;
+    }
 }
