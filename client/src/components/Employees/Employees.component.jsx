@@ -2,7 +2,7 @@
 import './Employees.style.css';
 
 // components
-import Add from '../AddButton/AddButton.component';
+import AddButton from '../AddButton/AddButton.component';
 
 function Employees() {
     return (
@@ -109,7 +109,7 @@ function Employees() {
                     <td><input type='text' name='salary'/></td>
                 </tr>
             </table>
-            <Add/>
+            <AddButton/>
         </div>
     )
 }

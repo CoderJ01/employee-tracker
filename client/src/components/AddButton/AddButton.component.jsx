@@ -1,12 +1,12 @@
 // CSS
 import './AddButton.style.css';
 
-function Add() {
+function AddButton() {
     return (
-        <div className='add'>
+        <div className='add-button'>
             <i className='fa fa-plus-circle'></i>
         </div>
     );
 }
 
-export default Add;
+export default AddButton;

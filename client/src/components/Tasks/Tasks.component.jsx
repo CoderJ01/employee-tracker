@@ -2,7 +2,7 @@
 import './Tasks.style.css';
 
 // components
-import Add from '../AddButton/AddButton.component';
+import AddButton from '../AddButton/AddButton.component';
 
 function Tasks() {
     return (
@@ -32,7 +32,7 @@ function Tasks() {
                 <br/>
             </div>
             <br/>
-            <Add/>
+            <AddButton/>
         </div>
     );
 }
