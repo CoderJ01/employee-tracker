@@ -31,6 +31,12 @@ function Tasks() {
                 <p>Date</p>
                 <br/>
             </div>
+            <div className='task'>
+                <h2>Title: <input type='text' name='title'/></h2>
+                <p>Description:</p>
+                <textarea name='description'/>
+                <br/>
+            </div>
             <br/>
             <AddButton/>
         </div>
