@@ -57,6 +57,32 @@ function Employees() {
                     <td><input type='text' name='salary'/></td>
                 </tr>
             </table>
+            <table className='employees-mobile'>
+                <tr>
+                    <th>Last Name:</th>
+                    <td>Smith</td>
+                </tr>
+                <tr>
+                    <th>First Name:</th>
+                    <td>John</td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td>smith.john@email.com</td>
+                </tr>
+                <tr>
+                    <th>Position:</th>
+                    <td>Software Engineer</td>
+                </tr>
+                <tr>
+                    <th>Industry:</th>
+                    <td>Information Technology</td>
+                </tr>
+                <tr>
+                    <th>Salary:</th>
+                    <td>$90,000</td>
+                </tr>
+            </table>
             <Add/>
         </div>
     )
