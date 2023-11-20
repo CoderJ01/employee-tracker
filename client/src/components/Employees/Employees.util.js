@@ -1,3 +1,6 @@
+// util 
+import { isValidEmail, isValidNumeric } from "../../utils/inputValidation";
+
 export function trackInput(e, formState, setFormState) {
     if(e.target.name === 'lastname') {
         setFormState({ ...formState, [e.target.name]: e.target.value });
@@ -21,8 +24,19 @@ export function trackInput(e, formState, setFormState) {
 
 export function processSubmission(e, lastname, firstname, email, role, department, salary, setErrorText) {
     e.preventDefault();
+    
     if(lastname === '' || firstname === '' || email === '' || role === '' || department === '' || salary === '') {
-        setErrorText('All inputs must be filled in');
+        setErrorText('All inputs must be filled in!');
+        return;
+    }
+
+    if(!isValidEmail(email)) {
+        setErrorText('Invalid email!');
+        return;
+    }
+
+    if(!isValidNumeric(salary)) {
+        setErrorText('Salary must contain only numeric values!');
         return;
     }
     setErrorText('');
