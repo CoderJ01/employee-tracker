@@ -9,6 +9,42 @@ import AddButton from '../AddButton/AddButton.component';
 
 function Employees() {
     const [display, setDisplay] = useState(false);
+    const [formState, setFormState] = useState({ lastname: '', firstname: '', 
+    email: '', role: '', department: '', salary: ''});
+    const { lastname, firstname, email, role, department, salary } = formState;
+    const [errorText, setErrorText] = useState('');
+
+    function handleChange(e) {
+        if(e.target.name === 'lastname') {
+            setFormState({ ...formState, [e.target.name]: e.target.value });
+        }
+        if(e.target.name === 'firstname') {
+            setFormState({ ...formState, [e.target.name]: e.target.value });
+        }
+        if(e.target.name === 'email') {
+            setFormState({ ...formState, [e.target.name]: e.target.value });
+        }
+        if(e.target.name === 'role') {
+            setFormState({ ...formState, [e.target.name]: e.target.value });
+        }
+        if(e.target.name === 'department') {
+            setFormState({ ...formState, [e.target.name]: e.target.value });
+        }
+        if(e.target.name === 'salary') {
+            setFormState({ ...formState, [e.target.name]: e.target.value });
+        }
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+
+        if(lastname === '' || firstname === '' || email === '' || salary === '' || department === '' || salary === '') {
+            setErrorText('All inputs must be filled in');
+            return;
+        }
+
+        setErrorText('');
+    }
 
     return (
         <div className='employees'>
@@ -58,12 +94,12 @@ function Employees() {
                     (
                         <>
                         <tr>
-                            <td><input type='text' name='lastname'/></td>
-                            <td><input type='text' name='firstname'/></td>
-                            <td><input type='text' name='firstname'/></td>
-                            <td><input type='text' name='position'/></td>
-                            <td><input type='text' name='industry'/></td>
-                            <td><input type='text' name='salary'/></td>
+                            <td><input type='text' name='lastname' defaultValue={lastname} onChange={handleChange}/></td>
+                            <td><input type='text' name='firstname' defaultValue={firstname} onChange={handleChange}/></td>
+                            <td><input type='text' name='email' defaultValue={email} onChange={handleChange}/></td>
+                            <td><input type='text' name='role' defaultValue={role} onChange={handleChange}/></td>
+                            <td><input type='text' name='department' defaultValue={department} onChange={handleChange}/></td>
+                            <td><input type='text' name='salary' defaultValue={salary} onChange={handleChange}/></td>
                         </tr>
                         </>
                     )
@@ -102,31 +138,32 @@ function Employees() {
                     <table className='employees-mobile'>
                         <tr>
                             <th>Last Name:</th>
-                            <td><input type='text' name='lastname'/></td>
+                            <td><input type='text' name='lastname' defaultValue={lastname} onChange={handleChange}/></td>
                         </tr>
                         <tr>
                             <th>First Name:</th>
-                            <td><input type='text' name='firstname'/></td>
+                            <td><input type='text' name='firstname' defaultValue={firstname} onChange={handleChange}/></td>
                         </tr>
                         <tr>
                             <th>Email:</th>
-                            <td><input type='text' name='email'/></td>
+                            <td><input type='text' name='email' defaultValue={email} onChange={handleChange}/></td>
                         </tr>
                         <tr>
                             <th>Position:</th>
-                            <td><input type='text' name='position'/></td>
+                            <td><input type='text' name='role' defaultValue={role} onChange={handleChange}/></td>
                         </tr>
                         <tr>
                             <th>Industry:</th>
-                            <td><input type='text' name='industry'/></td>
+                            <td><input type='text' name='department' defaultValue={department} onChange={handleChange}/></td>
                         </tr>
                         <tr>
                             <th>Salary:</th>
-                            <td><input type='text' name='salary'/></td>
+                            <td><input type='text' name='salary' defaultValue={salary} onChange={handleChange}/></td>
                         </tr>
                     </table>
+                    <text className='employees-error'>{errorText}</text>
                     <div className='employees-submit-button'>
-                        <button>Submit</button>
+                        <button onClick={handleSubmit}>Submit</button>
                     </div>
                     </>
                 )
