@@ -40,10 +40,15 @@ function Tasks() {
                 !display ? ('') :
                 (
                     <div className='task'>
-                        <h2>Title: <input type='text' name='title'/></h2>
+                        <h2>Title:</h2>
+                        <input type='text' name='title'/>
+                        <br/>
                         <p style={{ fontWeight: 'bold' }}>Description:</p>
                         <textarea name='description'/>
                         <br/>
+                        <div className='task-submit-button'>
+                            <button>Submit</button>
+                        </div>
                     </div>
                 )
             }
