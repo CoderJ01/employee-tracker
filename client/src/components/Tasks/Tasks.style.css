@@ -25,6 +25,10 @@
     font-weight: bold;
 }
 
+.task-submit-button button:active {
+    opacity: 0.7;
+}
+
 /* Desktop */
 @media screen and (min-width: 1280px) {
     .tasks {
