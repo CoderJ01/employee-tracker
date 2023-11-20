@@ -12,9 +12,7 @@ import AddButton from '../AddButton/AddButton.component';
 
 function Employees() {
     const [display, setDisplay] = useState(false);
-    const [formState, setFormState] = useState({ lastname: '', firstname: '', 
-    email: '', role: '', department: '', salary: ''});
-    const { lastname, firstname, email, role, department, salary } = formState;
+    const [formState, setFormState] = useState({ lastname: '', firstname: '', email: '', role: '', department: '', salary: ''});
     const [errorText, setErrorText] = useState('');
 
     function handleChange(e) {
@@ -23,7 +21,7 @@ function Employees() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        processSubmission(e, lastname, firstname, email, role, department, salary, setErrorText);
+        processSubmission(e, formState, setErrorText);
     }
 
     return (
@@ -74,12 +72,12 @@ function Employees() {
                     (
                         <>
                         <tr>
-                            <td><input type='text' name='lastname' defaultValue={lastname} onChange={handleChange}/></td>
-                            <td><input type='text' name='firstname' defaultValue={firstname} onChange={handleChange}/></td>
-                            <td><input type='text' name='email' defaultValue={email} onChange={handleChange}/></td>
-                            <td><input type='text' name='role' defaultValue={role} onChange={handleChange}/></td>
-                            <td><input type='text' name='department' defaultValue={department} onChange={handleChange}/></td>
-                            <td><input type='text' name='salary' defaultValue={salary} onChange={handleChange}/></td>
+                            <td><input type='text' name='lastname' defaultValue={formState.lastname} onChange={handleChange}/></td>
+                            <td><input type='text' name='firstname' defaultValue={formState.firstname} onChange={handleChange}/></td>
+                            <td><input type='text' name='email' defaultValue={formState.email} onChange={handleChange}/></td>
+                            <td><input type='text' name='role' defaultValue={formState.role} onChange={handleChange}/></td>
+                            <td><input type='text' name='department' defaultValue={formState.department} onChange={handleChange}/></td>
+                            <td><input type='text' name='salary' defaultValue={formState.salary} onChange={handleChange}/></td>
                         </tr>
                         </>
                     )
@@ -118,27 +116,27 @@ function Employees() {
                     <table className='employees-mobile'>
                         <tr>
                             <th>Last Name:</th>
-                            <td><input type='text' name='lastname' defaultValue={lastname} onChange={handleChange}/></td>
+                            <td><input type='text' name='lastname' defaultValue={formState.lastname} onChange={handleChange}/></td>
                         </tr>
                         <tr>
                             <th>First Name:</th>
-                            <td><input type='text' name='firstname' defaultValue={firstname} onChange={handleChange}/></td>
+                            <td><input type='text' name='firstname' defaultValue={formState.firstname} onChange={handleChange}/></td>
                         </tr>
                         <tr>
                             <th>Email:</th>
-                            <td><input type='text' name='email' defaultValue={email} onChange={handleChange}/></td>
+                            <td><input type='text' name='email' defaultValue={formState.email} onChange={handleChange}/></td>
                         </tr>
                         <tr>
                             <th>Position:</th>
-                            <td><input type='text' name='role' defaultValue={role} onChange={handleChange}/></td>
+                            <td><input type='text' name='role' defaultValue={formState.role} onChange={handleChange}/></td>
                         </tr>
                         <tr>
                             <th>Industry:</th>
-                            <td><input type='text' name='department' defaultValue={department} onChange={handleChange}/></td>
+                            <td><input type='text' name='department' defaultValue={formState.department} onChange={handleChange}/></td>
                         </tr>
                         <tr>
                             <th>Salary:</th>
-                            <td><input type='text' name='salary' defaultValue={salary} onChange={handleChange}/></td>
+                            <td><input type='text' name='salary' defaultValue={formState.salary} onChange={handleChange}/></td>
                         </tr>
                     </table>
                     <text className='employees-error'>{errorText}</text>

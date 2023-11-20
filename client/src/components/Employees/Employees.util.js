@@ -23,35 +23,26 @@ export function trackInput(e, formState, setFormState) {
     }
 }
 
-export function processSubmission(e, lastname, firstname, email, role, department, salary, setErrorText) {
+export function processSubmission(e, form, setErrorText) {
     e.preventDefault();
     
-    if(lastname === '' || firstname === '' || email === '' || role === '' || department === '' || salary === '') {
+    if(form.lastname === '' || form.firstname === '' || form.email === '' || form.role === '' || form.department === '' || form.salary === '') {
         setErrorText('All inputs must be filled in!');
         return;
     }
 
-    if(!isValidEmail(email)) {
+    if(!isValidEmail(form.email)) {
         setErrorText('Invalid email!');
         return;
     }
 
-    if(!isValidNumeric(salary)) {
+    if(!isValidNumeric(form.salary)) {
         setErrorText('Salary must contain only numeric values!');
         return;
     }
     
     setErrorText('');
 
-    let data = {
-        lastname: lastname,
-        firstname: firstname,
-        email: email,
-        role: role,
-        department: department,
-        salary: salary
-    }
-
-    postInfo('', data, '');
+    postInfo('', form, '');
 }
 
