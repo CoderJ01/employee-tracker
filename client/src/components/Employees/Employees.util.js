@@ -1,5 +1,6 @@
 // util 
 import { isValidEmail, isValidNumeric } from "../../utils/inputValidation";
+import { postInfo } from "../../utils/requests";
 
 export function trackInput(e, formState, setFormState) {
     if(e.target.name === 'lastname') {
@@ -39,6 +40,18 @@ export function processSubmission(e, lastname, firstname, email, role, departmen
         setErrorText('Salary must contain only numeric values!');
         return;
     }
+    
     setErrorText('');
+
+    let data = {
+        lastname: lastname,
+        firstname: firstname,
+        email: email,
+        role: role,
+        department: department,
+        salary: salary
+    }
+
+    postInfo('', data, '');
 }
 
