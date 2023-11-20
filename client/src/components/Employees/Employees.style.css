@@ -77,10 +77,6 @@
         width: 50%;
     }
 
-    .employees-submit-button {
-        margin-top: -1vh;
-    }
-
     .employees-submit-button button {
         width: 20%;
     }
@@ -110,10 +106,6 @@
     .employees-mobile,
     .employees-error {
         margin-left: 10%;
-    }
-
-    .employees-submit-button {
-        margin-top: -2vh;
     }
 }
 
