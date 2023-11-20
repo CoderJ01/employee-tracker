@@ -36,6 +36,11 @@
     margin-top: 1vh;
 }
 
+.employees-error {
+    color: red;
+    font-weight: bold;
+}
+
 /* Desktop */
 @media screen and (min-width: 1280px) {
     .employees {
@@ -69,13 +74,17 @@
     }
 
     .employees-mobile {
-        margin-left: 25%;
         margin-top: 2vh;
         width: 50%;
     }
 
     .employees-submit-button button {
         width: 20%;
+    }
+
+    .employees-mobile,
+    .employees-error {
+        margin-left: 25%;
     }
 }
 
@@ -92,23 +101,35 @@
 /* Surface Duo */
 @media screen and (max-width: 540px) {
     .employees-mobile {
-        margin-left: 10%;
         width: 80%;
+    }
+
+    .employees-mobile,
+    .employees-error {
+        margin-left: 10%;
     }
 }
 
 /* iPhone 14 Pro Max */
 @media screen and (max-width: 430px) {
     .employees-mobile {
-        margin-left: 5%;
         width: 90%;
+    }
+
+    .employees-mobile,
+    .employees-error {
+        margin-left: 5%;
     }
 }
 
 /* iPhone 12 Pro */
 @media screen and (max-width: 390px) {
     .employees-mobile {
-        margin-left: 2%;
         width: 96%;
+    }
+
+    .employees-mobile,
+    .employees-error {
+        margin-left: 2%;
     }
 }
