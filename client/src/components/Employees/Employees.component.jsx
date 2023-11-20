@@ -97,11 +97,11 @@ function Employees() {
                     <td>smith.john@email.com</td>
                 </tr>
                 <tr>
-                    <th>Position:</th>
+                    <th>Role:</th>
                     <td>Software Engineer</td>
                 </tr>
                 <tr>
-                    <th>Industry:</th>
+                    <th>Department:</th>
                     <td>Information Technology</td>
                 </tr>
                 <tr>
@@ -127,11 +127,11 @@ function Employees() {
                             <td><input type='text' name='email' defaultValue={formState.email} onChange={handleChange}/></td>
                         </tr>
                         <tr>
-                            <th>Position:</th>
+                            <th>Role:</th>
                             <td><input type='text' name='role' defaultValue={formState.role} onChange={handleChange}/></td>
                         </tr>
                         <tr>
-                            <th>Industry:</th>
+                            <th>Department:</th>
                             <td><input type='text' name='department' defaultValue={formState.department} onChange={handleChange}/></td>
                         </tr>
                         <tr>
