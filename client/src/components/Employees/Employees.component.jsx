@@ -9,6 +9,7 @@ import { trackInput, processSubmission } from './Employees.util';
 
 // components
 import AddButton from '../AddButton/AddButton.component';
+import Trashcan from '../Trashcan/Trashcan.component';
 
 function Employees() {
     const [display, setDisplay] = useState(false);
@@ -23,8 +24,6 @@ function Employees() {
         e.preventDefault();
         processSubmission(e, formState, setErrorText);
     }
-
-    const trash =  <i className='fa fa-trash-o' style={{ color: 'red' }}></i>
 
     return (
         <div className='employees'>
@@ -45,7 +44,7 @@ function Employees() {
                     <td>Software Engineer</td>
                     <td>Information Technology</td>
                     <td>$90,000</td>
-                    <td>{trash}</td>
+                    <td className='ed-delete'><Trashcan/></td>
                 </tr>
                 <tr>
                     <td>Smith</td>
@@ -54,7 +53,7 @@ function Employees() {
                     <td>Software Engineer</td>
                     <td>Information Technology</td>
                     <td>$90,000</td>
-                    <td>{trash}</td>
+                    <td className='ed-delete'><Trashcan/></td>
                 </tr>
                 <tr>
                     <td>Smith</td>
@@ -63,7 +62,7 @@ function Employees() {
                     <td>Software Engineer</td>
                     <td>Information Technology</td>
                     <td>$90,000</td>
-                    <td>{trash}</td>
+                    <td className='ed-delete'><Trashcan/></td>
                 </tr>
                 <tr>
                     <td>Smith</td>
@@ -72,7 +71,7 @@ function Employees() {
                     <td>Software Engineer</td>
                     <td>Information Technology</td>
                     <td>$90,000</td>
-                    <td>{trash}</td>
+                    <td className='ed-delete'><Trashcan/></td>
                 </tr>
                 {
                     !display ? ('') :
@@ -117,7 +116,7 @@ function Employees() {
                 </tr>
                 <tr>
                     <th>Delete?</th>
-                    <td style={{ backgroundColor: 'white'}}>{trash}</td>
+                    <td style={{ backgroundColor: 'white'}}><td><Trashcan/></td></td>
                 </tr>
             </table>
             {
