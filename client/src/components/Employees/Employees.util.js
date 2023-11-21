@@ -1,6 +1,6 @@
 // util 
 import { isValidEmail, isValidNumeric } from "../../utils/inputValidation";
-import { postInfo } from "../../utils/requests";
+import { postInfo, deleteInfo } from "../../utils/requests";
 
 export function trackInput(e, formState, setFormState) {
     if(e.target.name === 'lastname') {
@@ -44,5 +44,9 @@ export function processSubmission(e, form, setErrorText) {
     setErrorText('');
 
     postInfo('', form, '');
+}
+
+export function deleteEmployee(id) {
+    deleteInfo(route, id);
 }
 

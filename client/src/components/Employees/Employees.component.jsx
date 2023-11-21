@@ -5,7 +5,7 @@ import { useState } from 'react';
 import './Employees.style.css';
 
 // util
-import { trackInput, processSubmission } from './Employees.util';
+import { trackInput, processSubmission, deleteEmployee } from './Employees.util';
 
 // components
 import AddButton from '../AddButton/AddButton.component';
@@ -23,6 +23,10 @@ function Employees() {
     function handleSubmit(e) {
         e.preventDefault();
         processSubmission(e, formState, setErrorText);
+    }
+
+    function handleDelete() {
+        deleteEmployee('');
     }
 
     return (
@@ -44,7 +48,7 @@ function Employees() {
                     <td>Software Engineer</td>
                     <td>Information Technology</td>
                     <td>$90,000</td>
-                    <td className='ed-delete'><Trashcan/></td>
+                    <td className='ed-delete' onClick={handleDelete}><Trashcan/></td>
                 </tr>
                 <tr>
                     <td>Smith</td>
@@ -53,7 +57,7 @@ function Employees() {
                     <td>Software Engineer</td>
                     <td>Information Technology</td>
                     <td>$90,000</td>
-                    <td className='ed-delete'><Trashcan/></td>
+                    <td className='ed-delete' onClick={handleDelete}><Trashcan/></td>
                 </tr>
                 <tr>
                     <td>Smith</td>
@@ -62,7 +66,7 @@ function Employees() {
                     <td>Software Engineer</td>
                     <td>Information Technology</td>
                     <td>$90,000</td>
-                    <td className='ed-delete'><Trashcan/></td>
+                    <td className='ed-delete' onClick={handleDelete}><Trashcan/></td>
                 </tr>
                 <tr>
                     <td>Smith</td>
@@ -71,7 +75,7 @@ function Employees() {
                     <td>Software Engineer</td>
                     <td>Information Technology</td>
                     <td>$90,000</td>
-                    <td className='ed-delete'><Trashcan/></td>
+                    <td className='ed-delete' onClick={handleDelete}><Trashcan/></td>
                 </tr>
                 {
                     !display ? ('') :
@@ -116,7 +120,7 @@ function Employees() {
                 </tr>
                 <tr>
                     <th>Delete?</th>
-                    <td style={{ backgroundColor: 'white'}}><td><Trashcan/></td></td>
+                    <td style={{ backgroundColor: 'white'}}><Trashcan/></td>
                 </tr>
             </table>
             {
