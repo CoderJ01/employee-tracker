@@ -10,6 +10,7 @@ import Dashboard from './pages/Dashboard/Dashboard.page';
 // components
 import Header from './components/Header/Header.component';
 import Register from './components/Register/Register.component';
+import Login from './components/Login/Login.component';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path='/dashboard' element={<Dashboard/>}/>
           <Route path='/register' element={<Register/>}/>
+          <Route path='/login' element={<Login/>}/>
         </Routes>
       </BrowserRouter>
     </div>
