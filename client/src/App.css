@@ -30,7 +30,8 @@
     input,
     textarea,
     button,
-    label {
+    label,
+    i {
         font-size: 25px;
     }
 }
@@ -74,7 +75,8 @@
     input,
     textarea,
     button,
-    label {
+    label,
+    i {
         font-size: 20px;
     }
 }
