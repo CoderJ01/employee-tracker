@@ -24,6 +24,8 @@ function Employees() {
         processSubmission(e, formState, setErrorText);
     }
 
+    const trash =  <i className='fa fa-trash-o' style={{ color: 'red' }}></i>
+
     return (
         <div className='employees'>
             <table className='employees-desktop'>
@@ -34,6 +36,7 @@ function Employees() {
                     <th>Role</th>
                     <th>Department</th>
                     <th>Salary</th>
+                    <th></th>
                 </tr>
                 <tr>
                     <td>Smith</td>
@@ -42,6 +45,7 @@ function Employees() {
                     <td>Software Engineer</td>
                     <td>Information Technology</td>
                     <td>$90,000</td>
+                    <td>{trash}</td>
                 </tr>
                 <tr>
                     <td>Smith</td>
@@ -50,6 +54,7 @@ function Employees() {
                     <td>Software Engineer</td>
                     <td>Information Technology</td>
                     <td>$90,000</td>
+                    <td>{trash}</td>
                 </tr>
                 <tr>
                     <td>Smith</td>
@@ -58,6 +63,7 @@ function Employees() {
                     <td>Software Engineer</td>
                     <td>Information Technology</td>
                     <td>$90,000</td>
+                    <td>{trash}</td>
                 </tr>
                 <tr>
                     <td>Smith</td>
@@ -66,6 +72,7 @@ function Employees() {
                     <td>Software Engineer</td>
                     <td>Information Technology</td>
                     <td>$90,000</td>
+                    <td>{trash}</td>
                 </tr>
                 {
                     !display ? ('') :
@@ -107,6 +114,10 @@ function Employees() {
                 <tr>
                     <th>Salary:</th>
                     <td>$90,000</td>
+                </tr>
+                <tr>
+                    <th>Delete?</th>
+                    <td style={{ backgroundColor: 'white'}}>{trash}</td>
                 </tr>
             </table>
             {
