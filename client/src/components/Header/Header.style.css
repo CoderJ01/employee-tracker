@@ -14,6 +14,7 @@ header {
 
     .header-blank {
         margin-left: 2vw;
+        visibility: hidden;
     }
 
     .header-logout {

@@ -4,7 +4,7 @@ import './Header.style.css';
 function Header() {
     return(
         <header>
-            <text className='header-blank'></text>
+            <text className='header-blank'>Logout</text>
             <h1>Employee Tracker</h1>
             <text className='header-logout'>Logout</text>
         </header>
