@@ -26,6 +26,7 @@ function Employees() {
     }
 
     function handleDelete() {
+        console.log('test');
         deleteEmployee('');
     }
 
@@ -120,7 +121,7 @@ function Employees() {
                 </tr>
                 <tr>
                     <th>Delete?</th>
-                    <td style={{ backgroundColor: 'white'}}><Trashcan/></td>
+                    <td className='ed-delete' onClick={handleDelete}><Trashcan/></td>
                 </tr>
             </table>
             {

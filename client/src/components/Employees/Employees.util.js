@@ -47,6 +47,6 @@ export function processSubmission(e, form, setErrorText) {
 }
 
 export function deleteEmployee(id) {
-    deleteInfo(route, id);
+    deleteInfo('', id);
 }
 
