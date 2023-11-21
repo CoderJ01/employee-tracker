@@ -11,6 +11,18 @@
     width: 80%;
 }
 
+.task-delete {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 94%;
+    width: 6%;
+}
+
+.task-delete:active {
+    opacity: 0.4;
+}
+
 .task-submit-button {
     display: flex;
     flex-wrap: wrap;

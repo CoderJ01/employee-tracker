@@ -5,10 +5,11 @@ import { useState } from 'react';
 import './Tasks.style.css';
 
 // util 
-import { trackInput, processSubmission } from './Tasks.util';
+import { trackInput, processSubmission, deleteTask } from './Tasks.util';
 
 // components
 import AddButton from '../AddButton/AddButton.component';
+import Trashcan from '../Trashcan/Trashcan.component';
 
 function Tasks() {
     const [display, setDisplay] = useState(false);
@@ -24,12 +25,20 @@ function Tasks() {
         processSubmission(e, formState, setErrorText);
     }
 
+    function handleDelete() {
+        console.log('testing');
+        deleteTask('');
+    }
+
     return (
         <div className='tasks'>
             <div className='task'>
                 <h2>Task Title</h2>
                 <p>Description</p>
                 <p>Date</p>
+                <div className='task-delete' onClick={handleDelete}>
+                    <Trashcan/>
+                </div>
                 <br/>
             </div>
             <div className='task'>

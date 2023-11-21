@@ -1,3 +1,5 @@
+import { postInfo, deleteInfo } from "../../utils/requests";
+
 export function trackInput(e, formState, setFormState) {
     if(e.target.name === 'title') {
         setFormState({ ...formState, [e.target.name]: e.target.value });
@@ -18,4 +20,8 @@ export function processSubmission(e, form, setErrorText) {
     setErrorText('');
 
     postInfo('', form, '');
+}
+
+export function deleteTask(id) {
+    deleteInfo('', id);
 }
