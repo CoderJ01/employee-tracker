@@ -12,7 +12,7 @@ import com.employeetracker.server.exception.ResourceNotFoundException;
 import com.employeetracker.server.model.Employer;
 import com.employeetracker.server.repository.EmployerRepository;
 
-@CrossOrigin(origins = "http://localhost:5432")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/v1")
 public class EmployerController {
