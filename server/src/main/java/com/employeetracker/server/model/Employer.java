@@ -67,11 +67,11 @@ public class Employer {
         return id;
     }
 
-    public String getFirst_name() {
+    public String getFirstName() {
         return first_name;
     }
 
-    public String getLast_name() {
+    public String getLastName() {
         return last_name;
     }
 
@@ -79,7 +79,7 @@ public class Employer {
         return email;
     }
 
-    public String getPhone_number() {
+    public String getPhoneNumber() {
         return phone_number;
     }
 
@@ -87,7 +87,7 @@ public class Employer {
         return password;
     }
 
-    public String getCompany_name() {
+    public String getCompanyName() {
         return company_name;
     }
 
@@ -95,11 +95,11 @@ public class Employer {
         return role;
     }
 
-    public String getRandom_string() {
+    public String getRandomString() {
         return random_string;
     }
 
-    public Date getDate_created() {
+    public Date getDateCreated() {
         return date_created;
     }
 
@@ -107,11 +107,11 @@ public class Employer {
         this.id = id;
     }
 
-    public void setFirst_name(String first_name) {
+    public void setFirstName(String first_name) {
         this.first_name = first_name;
     }
 
-    public void setLast_name(String last_name) {
+    public void setLastName(String last_name) {
         this.last_name = last_name;
     }
 
@@ -119,7 +119,7 @@ public class Employer {
         this.email = email;
     }
 
-    public void setPhone_number(String phone_number) {
+    public void setPhoneNumber(String phone_number) {
         this.phone_number = phone_number;
     }
 
@@ -127,7 +127,7 @@ public class Employer {
         this.password = password;
     }
 
-    public void setCompany_name(String company_name) {
+    public void setCompanyName(String company_name) {
         this.company_name = company_name;
     }
 
@@ -135,11 +135,11 @@ public class Employer {
         this.role = role;
     }
 
-    public void setRandom_string(String random_string) {
+    public void setRandomString(String random_string) {
         this.random_string = random_string;
     }
 
-    public void setDate_created(Date date_created) {
+    public void setDateCreated(Date date_created) {
         this.date_created = date_created;
     }
 }
