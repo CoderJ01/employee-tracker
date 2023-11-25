@@ -26,7 +26,7 @@ public class EmployerController {
     }
 
     // create employer REST API
-    @PostMapping("/employees")
+    @PostMapping("/employers")
     public Employer createEmployer(@RequestBody Employer employer) {
         return employerRepository.save(employer);
     }
