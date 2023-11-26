@@ -39,7 +39,7 @@ public class Employee {
     private  LocalDateTime date_updated;
 
     @ManyToOne
-    @JoinColumn(name = "employer_id")
+    @JoinColumn(name = "employer_id", nullable = false)
     private Employer employer;
 
     public Employee() {
