@@ -1,5 +1,7 @@
 package com.employeetracker.server.controller;
 
+import java.time.LocalDateTime;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +30,7 @@ public class EmployerController {
     // create employer REST API
     @PostMapping("/employers")
     public Employer createEmployer(@RequestBody Employer employer) {
+        employer.setDateCreated(LocalDateTime.now());
         return employerRepository.save(employer);
     }
 
