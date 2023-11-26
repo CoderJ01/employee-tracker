@@ -2,7 +2,7 @@ package com.employeetracker.server.model;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "employers")
@@ -36,7 +36,7 @@ public class Employer {
     private String random_string;
 
     @Column(name = "date_created")
-    private Date date_created;
+    private LocalDateTime date_created;
 
     public Employer() {
 
@@ -49,8 +49,7 @@ public class Employer {
                     String password,
                     String company_name,
                     String role,
-                    String random_string,
-                    Date date_created) {
+                    String random_string) {
         super();
         this.first_name = first_name;
         this.last_name = last_name;
@@ -60,7 +59,7 @@ public class Employer {
         this.company_name = company_name;
         this.role = role;
         this.random_string = random_string;
-        this.date_created = date_created;
+        this.date_created = LocalDateTime.now();
     }
 
     public long getId() {
@@ -99,7 +98,7 @@ public class Employer {
         return random_string;
     }
 
-    public Date getDateCreated() {
+    public LocalDateTime getDateCreated() {
         return date_created;
     }
 
@@ -139,7 +138,7 @@ public class Employer {
         this.random_string = random_string;
     }
 
-    public void setDateCreated(Date date_created) {
+    public void setDateCreated(LocalDateTime date_created) {
         this.date_created = date_created;
     }
 }
