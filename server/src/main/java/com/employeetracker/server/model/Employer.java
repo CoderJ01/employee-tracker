@@ -35,7 +35,7 @@ public class Employer {
     @Column(name = "random_string")
     private String random_string;
 
-    @Column(name = "date_created")
+    @Column(name = "date_created", updatable = false)
     private LocalDateTime date_created;
 
     public Employer() {
