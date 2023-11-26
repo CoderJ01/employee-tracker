@@ -38,6 +38,10 @@ public class Employee {
     @Column(name= "date_updated")
     private  LocalDateTime date_updated;
 
+    @ManyToOne
+    @JoinColumn(name = "employer_id")
+    private Employer employer;
+
     public Employee() {
 
     }
@@ -48,7 +52,8 @@ public class Employee {
                     String phone_number,
                     String password,
                     String role,
-                    String random_string) {
+                    String random_string,
+                    Employer employer) {
         super();
         this.first_name = first_name;
         this.last_name = last_name;
@@ -58,6 +63,7 @@ public class Employee {
         this.role = role;
         this.random_string = random_string;
         this.date_created = LocalDateTime.now();
+        this.employer = employer;
     }
 
     public long getId() {
@@ -100,6 +106,10 @@ public class Employee {
         return date_updated;
     }
 
+    public Employer getEmployer() {
+        return employer;
+    }
+
     public void setId(long id) {
         this.id = id;
     }
@@ -138,5 +148,9 @@ public class Employee {
 
     public void setDateUpdated(LocalDateTime date_updated) {
         this.date_updated = date_updated;
+    }
+
+    public void setEmployer(Employer employer) {
+        this.employer = employer;
     }
 }
