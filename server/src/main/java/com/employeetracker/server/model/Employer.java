@@ -1,5 +1,6 @@
 package com.employeetracker.server.model;
 
+import java.util.*;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -40,6 +41,9 @@ public class Employer {
 
     @Column(name= "date_updated")
     private  LocalDateTime date_updated;
+
+    @OneToMany(mappedBy = "employer")
+    private Set<Employee> employees = new HashSet<>();
 
     public Employer() {
 
@@ -109,6 +113,10 @@ public class Employer {
         return date_updated;
     }
 
+    public Set<Employee> getEmployees() {
+        return employees;
+    }
+
     public void setId(long id) {
         this.id = id;
     }
@@ -151,5 +159,9 @@ public class Employer {
 
     public void setDateUpdated(LocalDateTime date_updated) {
         this.date_updated = date_updated;
+    }
+
+    public void addEmployee(Employee employee) {
+        employees.add(employee);
     }
 }
