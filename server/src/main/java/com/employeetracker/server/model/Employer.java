@@ -38,6 +38,9 @@ public class Employer {
     @Column(name = "date_created", updatable = false)
     private LocalDateTime date_created;
 
+    @Column(name= "date_updated")
+    private  LocalDateTime date_updated;
+
     public Employer() {
 
     }
@@ -102,6 +105,10 @@ public class Employer {
         return date_created;
     }
 
+    public LocalDateTime getDateUpdated() {
+        return date_updated;
+    }
+
     public void setId(long id) {
         this.id = id;
     }
@@ -140,5 +147,9 @@ public class Employer {
 
     public void setDateCreated(LocalDateTime date_created) {
         this.date_created = date_created;
+    }
+
+    public void setDateUpdated(LocalDateTime date_updated) {
+        this.date_updated = date_updated;
     }
 }

@@ -55,6 +55,7 @@ public class EmployerController {
         employer.setCompanyName(employerDetails.getCompanyName());
         employer.setRole(employerDetails.getRole());
         employer.setPassword(employerDetails.getPassword());
+        employer.setDateUpdated(LocalDateTime.now());
 
         Employer updatedEmployer = employerRepository.save(employer);
         return ResponseEntity.ok(updatedEmployer);
