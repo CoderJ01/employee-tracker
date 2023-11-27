@@ -1,5 +1,6 @@
 package com.employeetracker.server.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -22,6 +23,16 @@ public class Task {
 
     @Column(name= "date_updated")
     private  LocalDateTime date_updated;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "employer_id")
+    private Employer employer;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
 
     public Task () {
 
