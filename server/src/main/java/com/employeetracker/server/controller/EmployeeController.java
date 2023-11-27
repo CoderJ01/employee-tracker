@@ -27,13 +27,6 @@ public class EmployeeController {
     @Autowired
     private EmployerRepository employerRepository;
 
-    @GetMapping("/employees/{employer_id}")
-    public Set<Employee> getAllEmployees(@PathVariable Long employer_id) {
-        Employer employer = employerRepository.findById(employer_id)
-                .orElseThrow(() -> new ResourceNotFoundException("Employer with " + " id " + employer_id + " does not exist"));
-        return  employer.getEmployees();
-    }
-
     @PostMapping("employees/{employer_id}")
     public Employee createEmployee(@PathVariable Long employer_id,
                                    @RequestBody Employee employee) {
@@ -44,6 +37,13 @@ public class EmployeeController {
         employee.setEmployer(employer);
 
         return employeeRepository.save(employee);
+    }
+
+    @GetMapping("/employees/{employer_id}")
+    public Set<Employee> getAllEmployees(@PathVariable Long employer_id) {
+        Employer employer = employerRepository.findById(employer_id)
+                .orElseThrow(() -> new ResourceNotFoundException("Employer with " + " id " + employer_id + " does not exist"));
+        return  employer.getEmployees();
     }
 
     @PutMapping("employees/{id}")

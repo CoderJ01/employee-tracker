@@ -21,15 +21,15 @@ public class EmployerController {
     @Autowired
     private  EmployerRepository employerRepository;
 
-    @GetMapping("/employers")
-    public List<Employer> getAllEmployers() {
-        return employerRepository.findAll();
-    }
-
     @PostMapping("/employers")
     public Employer createEmployer(@RequestBody Employer employer) {
         employer.setDateCreated(LocalDateTime.now());
         return employerRepository.save(employer);
+    }
+
+    @GetMapping("/employers")
+    public List<Employer> getAllEmployers() {
+        return employerRepository.findAll();
     }
 
     @GetMapping("/employers/{id}")
