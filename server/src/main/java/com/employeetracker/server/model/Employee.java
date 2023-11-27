@@ -2,6 +2,9 @@ package com.employeetracker.server.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -42,6 +45,9 @@ public class Employee {
     @ManyToOne
     @JoinColumn(name = "employer_id")
     private Employer employer;
+
+    @OneToMany(mappedBy = "employee")
+    private Set<Task> tasks = new HashSet<>();
 
     public Employee() {
 
@@ -110,6 +116,8 @@ public class Employee {
     public Employer getEmployer() {
         return employer;
     }
+
+    public Set<Task> getTasks() { return tasks; }
 
     public void setId(long id) {
         this.id = id;
