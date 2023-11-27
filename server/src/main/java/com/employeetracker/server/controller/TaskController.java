@@ -30,8 +30,8 @@ public class TaskController {
     private EmployeeRepository employeeRepository;
 
     @PostMapping("/tasks/{employer_id}/{employee_id}")
-    public Task createTask(@PathVariable long employer_id,
-                           @PathVariable long employee_id,
+    public Task createTask(@PathVariable Long employer_id,
+                           @PathVariable Long employee_id,
                            @RequestBody Task task) {
         Employer employer = employerRepository.findById(employer_id)
                 .orElseThrow(() -> new ResourceNotFoundException("Employer with " + " id " + employer_id + " does not exist"));
