@@ -27,7 +27,7 @@ public class EmployeeController {
     @Autowired
     private EmployerRepository employerRepository;
 
-    @PostMapping("employees/{employer_id}")
+    @PostMapping("/employees/{employer_id}")
     public Employee createEmployee(@PathVariable Long employer_id,
                                    @RequestBody Employee employee) {
         Employer employer = employerRepository.findById(employer_id)
@@ -46,7 +46,7 @@ public class EmployeeController {
         return  employer.getEmployees();
     }
 
-    @PutMapping("employees/{id}")
+    @PutMapping("/employees/{id}")
     public ResponseEntity<Employee> updateEmployee(@PathVariable Long id,
                                                    @RequestBody Employee employeeDetails) {
         Employee employee = employeeRepository.findById(id)
