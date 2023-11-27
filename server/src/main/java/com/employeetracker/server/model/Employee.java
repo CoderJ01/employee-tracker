@@ -29,6 +29,9 @@ public class Employee {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "username")
+    private String username;
+
     @Column(name = "role")
     private String role;
 
@@ -57,6 +60,7 @@ public class Employee {
                     String last_name,
                     String email,
                     String phone_number,
+                    String username,
                     String password,
                     String role,
                     String random_string,
@@ -66,6 +70,7 @@ public class Employee {
         this.last_name = last_name;
         this.email = email;
         this.phone_number = phone_number;
+        this.username = username;
         this.password = password;
         this.role = role;
         this.random_string = random_string;
@@ -92,6 +97,8 @@ public class Employee {
     public String getPhoneNumber() {
         return phone_number;
     }
+
+    public String getUsername() { return username; }
 
     public String getPassword() {
         return password;
@@ -138,6 +145,8 @@ public class Employee {
     public void setPhoneNumber(String phone_number) {
         this.phone_number = phone_number;
     }
+
+    public void setUsername(String username) { this.username = username; }
 
     public void setPassword(String password) {
         this.password = password;

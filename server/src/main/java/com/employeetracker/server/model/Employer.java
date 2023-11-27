@@ -24,6 +24,9 @@ public class Employer {
     @Column(name = "phone_number")
     private String phone_number;
 
+    @Column(name = "username")
+    private String username;
+
     @Column(name = "password")
     private String password;
 
@@ -56,6 +59,7 @@ public class Employer {
                     String last_name,
                     String email,
                     String phone_number,
+                    String username,
                     String password,
                     String company_name,
                     String role,
@@ -65,6 +69,7 @@ public class Employer {
         this.last_name = last_name;
         this.email = email;
         this.phone_number = phone_number;
+        this.username = username;
         this.password = password;
         this.company_name = company_name;
         this.role = role;
@@ -91,6 +96,8 @@ public class Employer {
     public String getPhoneNumber() {
         return phone_number;
     }
+
+    public String getUsername() { return username; }
 
     public String getPassword() {
         return password;
@@ -141,6 +148,8 @@ public class Employer {
     public void setPhoneNumber(String phone_number) {
         this.phone_number = phone_number;
     }
+
+    public void setUsername(String username) { this.username = username; }
 
     public void setPassword(String password) {
         this.password = password;
