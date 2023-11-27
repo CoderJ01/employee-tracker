@@ -2,6 +2,7 @@ package com.employeetracker.server.controller;
 
 import java.time.LocalDateTime;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +15,8 @@ import com.employeetracker.server.exception.ResourceNotFoundException;
 import com.employeetracker.server.model.Employer;
 import com.employeetracker.server.repository.EmployerRepository;
 
+import com.employeetracker.server.generate.CreateUsername;
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/v1")
@@ -23,6 +26,7 @@ public class EmployerController {
 
     @PostMapping("/employers")
     public Employer createEmployer(@RequestBody Employer employer) {
+        employer.setUsername(new CreateUsername().setUsername(employer.getFirstName(), employer.getLastName(), 1));
         employer.setDateCreated(LocalDateTime.now());
         return employerRepository.save(employer);
     }
