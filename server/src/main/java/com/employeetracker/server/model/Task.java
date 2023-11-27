@@ -64,6 +64,14 @@ public class Task {
         return date_updated;
     }
 
+    public Employer getEmployer() {
+        return employer;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
     public void setId(long id) {
         this.id = id;
     }
@@ -82,5 +90,13 @@ public class Task {
 
     public void setDateUpdated(LocalDateTime date_updated) {
         this.date_updated = date_updated;
+    }
+
+    public void setEmployer(Employer employer) {
+        this.employer = employer;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 }
