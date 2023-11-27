@@ -1,13 +1,13 @@
 package com.employeetracker.server.generate;
 
 public class CreateUsername {
-    public String setUsername(String firstname, String lastname, int number) {
+    public static String setUsername(String firstname, String lastname, int number) {
         String zeros = setNumberOfZeros(number);
         String username = (firstname + lastname).toLowerCase() + zeros + number;
         return username;
     }
 
-    private String setNumberOfZeros(int number) {
+    private static String setNumberOfZeros(int number) {
         int count = 0;
 
         while(number != 0) {

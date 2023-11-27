@@ -26,7 +26,7 @@ public class EmployerController {
 
     @PostMapping("/employers")
     public Employer createEmployer(@RequestBody Employer employer) {
-        employer.setUsername(new CreateUsername().setUsername(employer.getFirstName(), employer.getLastName(), 1));
+        employer.setUsername(CreateUsername.setUsername(employer.getFirstName(), employer.getLastName(), 1));
         employer.setDateCreated(LocalDateTime.now());
         return employerRepository.save(employer);
     }
