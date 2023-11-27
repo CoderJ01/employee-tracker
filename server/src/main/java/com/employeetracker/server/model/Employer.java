@@ -45,6 +45,9 @@ public class Employer {
     @OneToMany(mappedBy = "employer")
     private Set<Employee> employees = new HashSet<>();
 
+    @OneToMany(mappedBy = "employer")
+    private Set<Task> tasks = new HashSet<>();
+
     public Employer() {
 
     }
@@ -116,6 +119,8 @@ public class Employer {
     public Set<Employee> getEmployees() {
         return employees;
     }
+
+    public Set<Task> getTasks () { return tasks; }
 
     public void setId(long id) {
         this.id = id;
