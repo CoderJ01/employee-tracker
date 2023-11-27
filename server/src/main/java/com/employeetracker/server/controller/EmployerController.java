@@ -21,20 +21,17 @@ public class EmployerController {
     @Autowired
     private  EmployerRepository employerRepository;
 
-    // get all employers
     @GetMapping("/employers")
     public List<Employer> getAllEmployers() {
         return employerRepository.findAll();
     }
 
-    // create employer REST API
     @PostMapping("/employers")
     public Employer createEmployer(@RequestBody Employer employer) {
         employer.setDateCreated(LocalDateTime.now());
         return employerRepository.save(employer);
     }
 
-    // get employer by id REST api
     @GetMapping("/employers/{id}")
     public ResponseEntity<Employer> getEmployerById(@PathVariable Long id) {
         Employer employer = employerRepository.findById(id)
@@ -42,7 +39,6 @@ public class EmployerController {
         return ResponseEntity.ok(employer);
     }
 
-    // update employer REST API
     @PutMapping("/employers/{id}")
     public ResponseEntity<Employer> updateEmployer(@PathVariable Long id, @RequestBody Employer employerDetails) {
         Employer employer = employerRepository.findById(id)
@@ -61,7 +57,6 @@ public class EmployerController {
         return ResponseEntity.ok(updatedEmployer);
     }
 
-    // delete employee rest api
     @DeleteMapping("/employers/{id}")
     public ResponseEntity<Map<String, Boolean>> deleteEmployer(@PathVariable Long id){
         Employer employer = employerRepository.findById(id)

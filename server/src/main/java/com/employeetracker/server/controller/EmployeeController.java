@@ -27,7 +27,6 @@ public class EmployeeController {
     @Autowired
     private EmployerRepository employerRepository;
 
-    // get all employees from an employer
     @GetMapping("/employees/{employer_id}")
     public Set<Employee> getAllEmployees(@PathVariable Long employer_id) {
         Employer employer = employerRepository.findById(employer_id)
@@ -47,7 +46,6 @@ public class EmployeeController {
         return employeeRepository.save(employee);
     }
 
-    // update employee REST API
     @PutMapping("employees/{id}")
     public ResponseEntity<Employee> updateEmployee(@PathVariable Long id,
                                                    @RequestBody Employee employeeDetails) {
