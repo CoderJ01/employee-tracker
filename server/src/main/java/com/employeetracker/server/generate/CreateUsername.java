@@ -36,6 +36,18 @@ public class CreateUsername {
         }
         return count;
     }
+
+    public static int checkDuplicateNames(Set<Employee> databaseList, Employee request) {
+        Employee[] SQLlist = databaseList.toArray(new Employee[databaseList.size()]);
+        int count = 1;
+        for(int i = 0; i < databaseList.size(); i++) {
+            if(request.getFirstName().equals(SQLlist[i].getFirstName()) &&
+                    request.getLastName().equals(SQLlist[i].getLastName())) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
 
 
