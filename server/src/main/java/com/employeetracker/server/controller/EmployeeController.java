@@ -18,6 +18,8 @@ import com.employeetracker.server.exception.ResourceNotFoundException;
 import com.employeetracker.server.model.Employee;
 import com.employeetracker.server.repository.EmployerRepository;
 
+import com.employeetracker.server.generate.CreateUsername;
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/v1")
@@ -33,6 +35,8 @@ public class EmployeeController {
         Employer employer = employerRepository.findById(employer_id)
                 .orElseThrow(() -> new ResourceNotFoundException("Employer with " + " id " + employer_id + " does not exist"));
 
+        int count = CreateUsername.checkDuplicateNames(getAllEmployees(employer_id), employee);
+        employee.setUsername(CreateUsername.setUsername(employee.getFirstName(), employee.getLastName(), count));
         employee.setDateCreated(LocalDateTime.now());
         employee.setEmployer(employer);
 
