@@ -3,7 +3,6 @@ package com.employeetracker.server.controller;
 import java.time.LocalDateTime;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -11,7 +10,6 @@ import com.employeetracker.server.model.Employer;
 import com.employeetracker.server.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import com.employeetracker.server.exception.ResourceNotFoundException;
