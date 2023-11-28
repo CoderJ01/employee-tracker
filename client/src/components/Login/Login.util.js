@@ -3,10 +3,10 @@ import { loginUser } from "../../utils/requests";
 
 export function trackInput(e, formState, setFormState) {
     if(e.target.name === 'username') {
-        setFormState({ ...formState, [e.target.name]: e.target.value });
+        setFormState({ ...formState, [e.target.name]: e.target.value.trim() });
     }
     if(e.target.name === 'password') {
-        setFormState({ ...formState, [e.target.name]: e.target.value });
+        setFormState({ ...formState, [e.target.name]: e.target.value.trim() });
     }
 }
 

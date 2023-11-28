@@ -4,13 +4,13 @@ import { postInfo } from "../../utils/requests";
 
 export function trackInput(e, formState, setFormState) {
     if(e.target.name === 'lastname') {
-        setFormState({ ...formState, [e.target.name]: e.target.value });
+        setFormState({ ...formState, [e.target.name]: e.target.value.trim() });
     }
     if(e.target.name === 'firstname') {
-        setFormState({ ...formState, [e.target.name]: e.target.value });
+        setFormState({ ...formState, [e.target.name]: e.target.value.trim() });
     }
     if(e.target.name === 'email') {
-        setFormState({ ...formState, [e.target.name]: e.target.value });
+        setFormState({ ...formState, [e.target.name]: e.target.value.trim() });
     }
     if(e.target.name === 'phonenumber') {
         setFormState({ ...formState, [e.target.name]: e.target.value });
@@ -19,7 +19,7 @@ export function trackInput(e, formState, setFormState) {
         setFormState({ ...formState, [e.target.name]: e.target.value });
     }
     if(e.target.name === 'companyname') {
-        setFormState({ ...formState, [e.target.name]: e.target.value });
+        setFormState({ ...formState, [e.target.name]: e.target.value.trim() });
     }
 }
 

@@ -2,7 +2,7 @@ import { postInfo, deleteInfo } from "../../utils/requests";
 
 export function trackInput(e, formState, setFormState) {
     if(e.target.name === 'title') {
-        setFormState({ ...formState, [e.target.name]: e.target.value });
+        setFormState({ ...formState, [e.target.name]: e.target.value.trim() });
     }
     if(e.target.name === 'description') {
         setFormState({ ...formState, [e.target.name]: e.target.value });
