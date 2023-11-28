@@ -26,13 +26,7 @@ public class EmployerController {
 
     @PostMapping("/employers")
     public Employer createEmployer(@RequestBody Employer employer) {
-        int count = 1;
-        for(int i = 0; i < getAllEmployers().size(); i++) {
-            if(employer.getFirstName().equals(getAllEmployers().get(i).getFirstName()) &&
-                    employer.getLastName().equals(getAllEmployers().get(i).getLastName())) {
-                count++;
-            }
-        }
+        int count = CreateUsername.checkDuplicateNames(getAllEmployers(), employer);
         employer.setUsername(CreateUsername.setUsername(employer.getFirstName(), employer.getLastName(), count));
         employer.setDateCreated(LocalDateTime.now());
         return employerRepository.save(employer);
