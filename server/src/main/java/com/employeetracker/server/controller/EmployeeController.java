@@ -59,6 +59,7 @@ public class EmployeeController {
         employee.setEmail(employeeDetails.getEmail());
         employee.setPhoneNumber(employeeDetails.getPhoneNumber());
         employee.setRole(employeeDetails.getRole());
+        employee.setDepartment(employeeDetails.getDepartment());
         employee.setDateUpdated(LocalDateTime.now());
 
         Employee updatedEmployee = employeeRepository.save(employee);

@@ -35,6 +35,9 @@ public class Employee {
     @Column(name = "role")
     private String role;
 
+    @Column(name = "department")
+    private String department;
+
     @Column(name = "random_string")
     private String random_string;
 
@@ -63,6 +66,7 @@ public class Employee {
                     String username,
                     String password,
                     String role,
+                    String department,
                     String random_string,
                     Employer employer) {
         super();
@@ -73,6 +77,7 @@ public class Employee {
         this.username = username;
         this.password = password;
         this.role = role;
+        this.department = department;
         this.random_string = random_string;
         this.date_created = LocalDateTime.now();
         this.employer = employer;
@@ -107,6 +112,8 @@ public class Employee {
     public String getRole() {
         return role;
     }
+
+    public String getDepartment() { return department; }
 
     public String getRandomString() {
         return random_string;
@@ -155,6 +162,8 @@ public class Employee {
     public void setRole(String role) {
         this.role = role;
     }
+
+    public void setDepartment(String department) { this.department = department; }
 
     public void setRandomString(String random_string) {
         this.random_string = random_string;
