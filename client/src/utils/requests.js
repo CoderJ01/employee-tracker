@@ -8,7 +8,7 @@ import setCookie from './setCookie';
 import axios from 'axios';
 import cookie from 'js-cookie';
 
-const baseURL_server = '';
+const baseURL_server = import.meta.env.VITE_SERVER_URL;
 
 // GET
 export function GetInfo(route, user = false) {
