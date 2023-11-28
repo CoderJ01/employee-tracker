@@ -18,13 +18,13 @@ public class Employer {
     @Column(name = "last_name")
     private String last_name;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     private String email;
 
     @Column(name = "phone_number")
     private String phone_number;
 
-    @Column(name = "username")
+    @Column(name = "username", unique = true)
     private String username;
 
     @Column(name = "password")

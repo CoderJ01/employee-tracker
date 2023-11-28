@@ -20,7 +20,7 @@ public class Employee {
     @Column(name = "last_name")
     private String last_name;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     private String email;
 
     @Column(name = "phone_number")
@@ -29,7 +29,7 @@ public class Employee {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "username")
+    @Column(name = "username", unique = true)
     private String username;
 
     @Column(name = "role")
@@ -41,7 +41,7 @@ public class Employee {
     @Column(name = "date_created", updatable = false)
     private LocalDateTime date_created;
 
-    @Column(name= "date_updated")
+    @Column(name = "date_updated")
     private  LocalDateTime date_updated;
 
     @JsonIgnore
