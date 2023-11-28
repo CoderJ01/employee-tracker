@@ -3,7 +3,7 @@ package com.employeetracker.server.generate;
 public class CreateUsername {
     public static String setUsername(String firstname, String lastname, int number) {
         String zeros = setNumberOfZeros(number);
-        String username = (firstname + lastname).toLowerCase() + zeros + number;
+        String username = (firstname + lastname).trim().toLowerCase() + zeros + number;
         return username;
     }
 
