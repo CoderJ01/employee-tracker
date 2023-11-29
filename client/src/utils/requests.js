@@ -11,7 +11,7 @@ import cookie from 'js-cookie';
 const baseURL_server = import.meta.env.VITE_SERVER_URL;
 
 // GET
-export function GetInfo(route, user = false) {
+export function getInfo(route, user = false) {
     const [data, setData] = useState([]);
 
     const getInfo = useCallback(async() => {
