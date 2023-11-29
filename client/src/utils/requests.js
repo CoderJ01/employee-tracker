@@ -43,18 +43,26 @@ function getUser(response, setData) {
 }
 
 // POST
-export function postInfo(route, infoObj, id) {
-    if(id) {
-        axios.post(`${baseURL_server}/${route}/${id}`, {
-            info: infoObj
-        })
-        .then(response => {
-            console.log(response);
-        })
-        .catch(error => {
-            console.log(error);
-        });
-    }
+export function postInfo(route, infoObj) {
+    axios.post(`${baseURL_server}/${route}`, {
+        lastName: infoObj.lastName, 
+        firtsName: infoObj.firtsName, 
+        email: infoObj.email, 
+        phoneNumber: infoObj.phoneNumber, 
+        password: infoObj.password,
+        companyName: infoObj.companyname,
+        role: infoObj.role,
+        department: infoObj.department,
+        salary: infoObj.salary,
+        title: infoObj.title,
+        description: infoObj.description
+    })
+    .then(response => {
+        console.log(response);
+    })
+    .catch(error => {
+        console.log(error);
+    });
 }
 
 export function loginUser(route, username, password) {
