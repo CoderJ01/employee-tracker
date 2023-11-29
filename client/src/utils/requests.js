@@ -45,10 +45,10 @@ function getUser(response, setData) {
 // POST
 export function postInfo(route, infoObj) {
     axios.post(`${baseURL_server}/${route}`, {
-        lastName: infoObj.lastName, 
-        firtsName: infoObj.firtsName, 
+        lastName: infoObj.lastname, 
+        firstName: infoObj.firstname, 
         email: infoObj.email, 
-        phoneNumber: infoObj.phoneNumber, 
+        phoneNumber: infoObj.phonenumber, 
         password: infoObj.password,
         companyName: infoObj.companyname,
         role: infoObj.role,
