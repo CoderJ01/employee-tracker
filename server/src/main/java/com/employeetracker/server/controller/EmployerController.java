@@ -15,6 +15,7 @@ import com.employeetracker.server.model.Employer;
 import com.employeetracker.server.repository.EmployerRepository;
 
 import com.employeetracker.server.generate.CreateUsername;
+import com.employeetracker.server.bcrypt.BcryptInput;
 
 @CrossOrigin(origins = "http://localhost:5173")
 @RestController
@@ -27,6 +28,7 @@ public class EmployerController {
     public Employer createEmployer(@RequestBody Employer employer) {
         int count = CreateUsername.checkDuplicateNames(getAllEmployers(), employer);
         employer.setUsername(CreateUsername.setUsername(employer.getFirstName(), employer.getLastName(), count));
+        employer.setPassword(BcryptInput.bcryptInput(employer.getPassword()));
         employer.setDateCreated(LocalDateTime.now());
         return employerRepository.save(employer);
     }
