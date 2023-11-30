@@ -20,5 +20,5 @@ export function processSubmission(e, form, setErrorText) {
 
     setErrorText('');
 
-    loginUser('employers/login', form.username, form.password);
+    loginUser('employers/login', form.username, form.password, setErrorText);
 }
