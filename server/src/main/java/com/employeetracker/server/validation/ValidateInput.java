@@ -1,6 +1,7 @@
 package com.employeetracker.server.validation;
 
 import com.employeetracker.server.model.Employer;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.List;
 
@@ -13,5 +14,12 @@ public class ValidateInput {
             }
         }
         throw new RuntimeException("Username or email does not exists!");
+    }
+
+    public static boolean validatePassword(String passwordInput, String databasePassword) {
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        boolean passwordIsValid = bCryptPasswordEncoder.matches(passwordInput, databasePassword);
+        if(passwordIsValid) return true;
+        throw new RuntimeException("Wrong password!");
     }
 }
