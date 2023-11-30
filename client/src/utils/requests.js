@@ -43,7 +43,7 @@ function getUser(response, setData) {
 }
 
 // POST
-export function postInfo(route, infoObj) {
+export function postInfo(route, infoObj, setErrorText) {
     axios.post(`${baseURL_server}/${route}`, {
         lastName: infoObj.lastname, 
         firstName: infoObj.firstname, 
@@ -62,6 +62,11 @@ export function postInfo(route, infoObj) {
     })
     .catch(error => {
         console.log(error);
+        if(error.response.data.trace.toString().includes('duplicate key value violates unique constraint')
+        && error.response.data.trace.toString().includes('email')) 
+        {
+            setErrorText('This email is already taken! Please use a different email!');
+        }
     });
 }
 
