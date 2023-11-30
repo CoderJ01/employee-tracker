@@ -62,12 +62,13 @@ export function postInfo(route, infoObj, setErrorText) {
     })
     .catch(error => {
         console.log(error);
-        displayErrorMessage(error, 'duplicate key value violates unique constraint' /* postgreSQL */, '(email)', setErrorText, 'email');
+        displayErrorMessage(error, 'duplicate key value violates unique constraint', '(email)', setErrorText, 'email');
         displayErrorMessage(error, 'duplicate key value violates unique constraint', '(phone_number)', setErrorText, 'phone number');
     });
 }
 
 function displayErrorMessage(error, constraint, infoType, setErrorText, takenType) {
+    // constraint generated from Spring Boot (Java/Maven) backend and PostgreSQL database
     // trace = backend response
     if(error.response.data.trace.toString().includes(constraint) 
     && error.response.data.trace.toString().includes(infoType))
