@@ -60,6 +60,7 @@ public class EmployeeController {
         employee.setPhoneNumber(employeeDetails.getPhoneNumber());
         employee.setRole(employeeDetails.getRole());
         employee.setDepartment(employeeDetails.getDepartment());
+        employee.setSalary(employeeDetails.getSalary());
         employee.setDateUpdated(LocalDateTime.now());
 
         Employee updatedEmployee = employeeRepository.save(employee);
