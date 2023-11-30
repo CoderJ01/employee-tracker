@@ -82,15 +82,11 @@ export function loginUser(route, username, password) {
     {
         username: username,
         password: password,
-    },
-    {
-        withCredentials: true,
-        credentials: 'include'
     })
     .then(response => {
-        setCookie('employee-tracker-cookie', response.data.data.randomString, 1);
+        // setCookie('employee-tracker-cookie', response.data.data.randomString, 1);
         console.log(response);
-        window.location.reload(false);
+        // window.location.reload(false);
     })
     .catch(error => {
         console.log(error);
