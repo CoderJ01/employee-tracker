@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import com.employeetracker.server.exception.ResourceNotFoundException;
@@ -16,6 +17,8 @@ import com.employeetracker.server.repository.EmployerRepository;
 
 import com.employeetracker.server.generate.CreateUsername;
 import com.employeetracker.server.bcrypt.BcryptInput;
+import com.employeetracker.server.validation.ValidateInput;
+import com.employeetracker.server.generate.CreateSessionCookie;
 
 @CrossOrigin(origins = "http://localhost:5173")
 @RestController
@@ -31,6 +34,14 @@ public class EmployerController {
         employer.setPassword(BcryptInput.bcryptInput(employer.getPassword()));
         employer.setDateCreated(LocalDateTime.now());
         return employerRepository.save(employer);
+    }
+
+    @PostMapping("/employers/login")
+    public Employer loginEmployer(@RequestBody Employer employer) {
+        Employer loginEmployer = ValidateInput.validateUsernameOrEmail(getAllEmployers(), employer);
+        boolean validPassword = ValidateInput.validatePassword(employer.getPassword(), loginEmployer.getPassword());
+        if(validPassword) loginEmployer.setSessionCookie(CreateSessionCookie.createCookie(80));
+        return employerRepository.save(loginEmployer);
     }
 
     @GetMapping("/employers")
