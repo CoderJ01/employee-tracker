@@ -61,7 +61,7 @@ export function postInfo(route, infoObj, setErrorText) {
         console.log(response);
     })
     .catch(error => {
-        console.log(error.response.data.trace);
+        console.log(error);
         displayErrorMessage(error, 'duplicate key value violates unique constraint', '(email)', setErrorText, 'email');
         displayErrorMessage(error, 'duplicate key value violates unique constraint', '(phone_number)', setErrorText, 'phone number');
     });
