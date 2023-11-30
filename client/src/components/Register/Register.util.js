@@ -43,5 +43,5 @@ export function processSubmission(e, form, setErrorText) {
 
     setErrorText('');
 
-    postInfo('employers', form);
+    postInfo('employers', form, setErrorText);
 }
