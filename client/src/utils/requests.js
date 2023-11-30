@@ -61,12 +61,17 @@ export function postInfo(route, infoObj, setErrorText) {
         console.log(response);
     })
     .catch(error => {
-        console.log(error);
+        console.log(error.response.data.trace);
         // trace = backend response
         if(error.response.data.trace.toString().includes('duplicate key value violates unique constraint') 
-        && error.response.data.trace.toString().includes('email')) 
+        && error.response.data.trace.toString().includes('(email)')) 
         {
             setErrorText('This email is already taken! Please use a different email!');
+        }
+        if(error.response.data.trace.toString().includes('duplicate key value violates unique constraint') 
+        && error.response.data.trace.toString().includes('(phone_number)')) 
+        {
+            setErrorText('This phone number is already taken! Please use a different number!');
         }
     });
 }
