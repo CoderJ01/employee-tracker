@@ -41,8 +41,8 @@ public class Employee {
     @Column(name = "salary")
     private int salary;
 
-    @Column(name = "random_string")
-    private String random_string;
+    @Column(name = "session_cookie")
+    private String session_cookie;
 
     @Column(name = "date_created", updatable = false)
     private LocalDateTime date_created;
@@ -71,7 +71,7 @@ public class Employee {
                     String role,
                     String department,
                     int salary,
-                    String random_string,
+                    String session_cookie,
                     Employer employer) {
         super();
         this.first_name = first_name;
@@ -83,7 +83,7 @@ public class Employee {
         this.role = role;
         this.department = department;
         this.salary = salary;
-        this.random_string = random_string;
+        this.session_cookie = session_cookie;
         this.date_created = LocalDateTime.now();
         this.employer = employer;
     }
@@ -122,8 +122,8 @@ public class Employee {
 
     public int getSalary() { return salary; }
 
-    public String getRandomString() {
-        return random_string;
+    public String getSessionCookie() {
+        return session_cookie;
     }
 
     public LocalDateTime getDateCreated() {
@@ -174,8 +174,8 @@ public class Employee {
 
     public void setSalary(int salary) { this.salary = salary; }
 
-    public void setRandomString(String random_string) {
-        this.random_string = random_string;
+    public void setSessionCookie(String session_cookie) {
+        this.session_cookie = session_cookie;
     }
 
     public void setDateCreated(LocalDateTime date_created) {
