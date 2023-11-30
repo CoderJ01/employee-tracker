@@ -36,9 +36,11 @@ export function processSubmission(e, form, setErrorText) {
         return;
     }
 
-    if(!isValidNumeric(form.phonenumber)) {
-        setErrorText('Phone number must have only numbers!');
-        return;
+    if(form.phonenumber !== '') {
+        if(!isValidNumeric(form.phonenumber)) {
+            setErrorText('Phone number must have only numbers!');
+            return;
+        }
     }
 
     if(form.password.length < 8) {
