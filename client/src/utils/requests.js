@@ -62,7 +62,8 @@ export function postInfo(route, infoObj, setErrorText) {
     })
     .catch(error => {
         console.log(error);
-        if(error.response.data.trace.toString().includes('duplicate key value violates unique constraint')
+        // trace = backend response
+        if(error.response.data.trace.toString().includes('duplicate key value violates unique constraint') 
         && error.response.data.trace.toString().includes('email')) 
         {
             setErrorText('This email is already taken! Please use a different email!');
