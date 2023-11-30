@@ -62,12 +62,12 @@ export function postInfo(route, infoObj, setErrorText) {
     })
     .catch(error => {
         console.log(error);
-        displayErrorMessage(error, 'duplicate key value violates unique constraint', '(email)', setErrorText, 'email');
-        displayErrorMessage(error, 'duplicate key value violates unique constraint', '(phone_number)', setErrorText, 'phone number');
+        displayRegisterErrorMessage(error, 'duplicate key value violates unique constraint', '(email)', setErrorText, 'email');
+        displayRegisterErrorMessage(error, 'duplicate key value violates unique constraint', '(phone_number)', setErrorText, 'phone number');
     });
 }
 
-function displayErrorMessage(error, constraint, infoType, setErrorText, takenType) {
+function displayRegisterErrorMessage(error, constraint, infoType, setErrorText, takenType) {
     // constraint generated from Spring Boot (Java/Maven) backend and PostgreSQL database
     // trace = backend response
     if(error.response.data.trace.toString().includes(constraint) 
@@ -77,7 +77,7 @@ function displayErrorMessage(error, constraint, infoType, setErrorText, takenTyp
     }
 }
 
-export function loginUser(route, username, password) {
+export function loginUser(route, username, password, setErrorText) {
     axios.post(`${baseURL_server}/${route}`, 
     {
         username: username,
@@ -89,8 +89,16 @@ export function loginUser(route, username, password) {
         // window.location.reload(false);
     })
     .catch(error => {
-        console.log(error);
+        console.log(error.response.data.trace);
+        displayLoginErrorMessage(error, 'java.lang.RuntimeException: Username or email does not exists!', 'Username or email does not exist!', setErrorText);
+        displayLoginErrorMessage(error, 'java.lang.RuntimeException: Wrong password!', 'The password does not match the user!', setErrorText);
     });
+}
+
+function displayLoginErrorMessage(error, message, output, setErrorText) {
+    if(error.response.data.trace.toString().includes(message)) {
+        setErrorText(output);
+    }
 }
 
 // DELETE
