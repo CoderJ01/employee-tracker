@@ -1,5 +1,5 @@
 // util 
-import { isValidEmail } from "../../utils/inputValidation";
+import { isValidEmail, isValidNumeric } from "../../utils/inputValidation";
 import { postInfo } from "../../utils/requests";
 
 export function trackInput(e, formState, setFormState) {
@@ -13,7 +13,7 @@ export function trackInput(e, formState, setFormState) {
         setFormState({ ...formState, [e.target.name]: e.target.value.trim() });
     }
     if(e.target.name === 'phonenumber') {
-        setFormState({ ...formState, [e.target.name]: e.target.value });
+        setFormState({ ...formState, [e.target.name]: e.target.value.trim() });
     }
     if(e.target.name === 'password') {
         setFormState({ ...formState, [e.target.name]: e.target.value });
@@ -33,6 +33,11 @@ export function processSubmission(e, form, setErrorText) {
 
     if(!isValidEmail(form.email)) {
         setErrorText('Invalid email!');
+        return;
+    }
+
+    if(!isValidNumeric(form.phonenumber)) {
+        setErrorText('Phone number must have only numbers!');
         return;
     }
 

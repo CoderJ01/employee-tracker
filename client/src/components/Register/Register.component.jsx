@@ -44,7 +44,7 @@ function Register() {
                 <br/>
                 <div>
                     <label htmlFor='phonenumber'>Phone Number:</label><br/>
-                    <input type='text' name='phonenumber' defaultValue={formState.phonenumber} onChange={handleChange}/>
+                    <input maxLength={11} type='text' name='phonenumber' defaultValue={formState.phonenumber} onChange={handleChange}/>
                 </div>
                 <br/>
                 <div>
