@@ -62,18 +62,18 @@ export function postInfo(route, infoObj, setErrorText) {
     })
     .catch(error => {
         console.log(error.response.data.trace);
-        // trace = backend response
-        if(error.response.data.trace.toString().includes('duplicate key value violates unique constraint') 
-        && error.response.data.trace.toString().includes('(email)')) 
-        {
-            setErrorText('This email is already taken! Please use a different email!');
-        }
-        if(error.response.data.trace.toString().includes('duplicate key value violates unique constraint') 
-        && error.response.data.trace.toString().includes('(phone_number)')) 
-        {
-            setErrorText('This phone number is already taken! Please use a different number!');
-        }
+        displayErrorMessage(error, 'duplicate key value violates unique constraint', '(email)', setErrorText, 'email');
+        displayErrorMessage(error, 'duplicate key value violates unique constraint', '(phone_number)', setErrorText, 'phone number');
     });
+}
+
+function displayErrorMessage(error, constraint, infoType, setErrorText, takenType) {
+    // trace = backend response
+    if(error.response.data.trace.toString().includes(constraint) 
+    && error.response.data.trace.toString().includes(infoType))
+    {
+        setErrorText(`This ${takenType} is already taken!`);
+    }
 }
 
 export function loginUser(route, username, password) {
