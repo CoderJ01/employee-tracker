@@ -43,6 +43,10 @@ header a:active {
         margin-top: 10px;
     }
 
+    .header-greet {
+       text-align: center;
+    }
+
     .header-logout {
         margin-top: 20px;
     }
