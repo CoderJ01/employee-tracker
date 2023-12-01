@@ -84,9 +84,8 @@ export function loginUser(route, username, password, setErrorText) {
         password: password,
     })
     .then(response => {
-        // setCookie('employee-tracker-cookie', response.data.data.randomString, 1);
-        console.log(response);
-        // window.location.reload(false);
+        setCookie('employee-tracker-cookie', response.data.sessionCookie, 1);
+        window.location.reload(false);
     })
     .catch(error => {
         console.log(error);
