@@ -24,7 +24,7 @@ function App() {
       <Header user={data}/>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={data.length === 1 ? <Dashboard/> : <AccessDenied/>}/>
+          <Route path='/' element={data.length === 0 ? <AccessDenied/> : <Dashboard/>}/>
           <Route path='/register' element={data.length === 0 ? <Register/> : <Navigate to='/'/>}/>
           <Route path='/login' element={data.length === 0 ? <Login/> : <Navigate to='/'/>}/>
         </Routes>
