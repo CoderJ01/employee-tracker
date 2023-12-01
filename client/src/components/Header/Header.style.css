@@ -25,13 +25,20 @@ header a:active {
         padding: 10px 0 10px 0;
     }
 
-    .header-blank {
+    .header-blank-logout {
         margin-left: 2vw;
+    }
+
+    .header-blank-login,
+    .header-blank-logout {
         visibility: hidden;
     }
 
     .header-logout {
         margin-right: 2vw;
+    }
+
+    .login {
         margin-top: 10px;
     }
 }
@@ -45,6 +52,14 @@ header a:active {
     .header-blank {
         display: none;
     }
+
+    .login {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-left: 40%;
+        width: 20%;
+    }
 }
 
 /* iPad Pro */
@@ -54,12 +69,18 @@ header a:active {
 
 /* iPad Air */
 @media screen and (max-width: 820px) {
-    
+    .login {
+        margin-left: 37%;
+        width: 26%;
+    }
 }
 
 /* Surface Duo */
 @media screen and (max-width: 540px) {
-    
+    .login {
+        margin-left: 31%;
+        width: 38%;
+    }
 }
 
 /* iPhone 14 Pro Max */
