@@ -38,7 +38,8 @@ header a:active {
         margin-right: 2vw;
     }
 
-    .login {
+    .login,
+    .header-logout {
         margin-top: 10px;
     }
 }
