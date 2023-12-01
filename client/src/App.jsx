@@ -16,10 +16,7 @@ import Login from './components/Login/Login.component';
 import { useFetch } from './utils/requests';
 
 function App() {
-  const data  = useFetch(
-    'employers',
-    true
-  );
+  const data  = useFetch('employers', true);
 
   return (
     <div className='App'>  
