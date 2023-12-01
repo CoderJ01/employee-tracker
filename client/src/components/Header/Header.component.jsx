@@ -16,14 +16,20 @@ function Header({ user }) {
                 user.length === 0 ? 
                 (
                     <>
-                    <text className='header-blank'>Login</text>
+                    <div className='header-blank-login'>
+                        <text className='header-logout header-blank'>Register</text>
+                        <text className='header-logout header-blank'>Login</text>
+                    </div>
                     <h1>Employee Tracker</h1>
-                    <a href={`${import.meta.env.VITE_CLIENT_URL}/login`}className='header-logout'>Login</a>
+                    <div className='login'>
+                        <a href={`${import.meta.env.VITE_CLIENT_URL}/register`} className='header-logout'>Register</a>
+                        <a href={`${import.meta.env.VITE_CLIENT_URL}/login`} className='header-logout'>Login</a>
+                    </div>
                     </>
                 ) : 
                 (
                     <>
-                    <text className='header-blank'>Logout</text>
+                    <text className='header-blank-logout'>Logout</text>
                     <h1>Employee Tracker</h1>
                     <text className='header-logout' onClick={handleLogout}>Logout</text>
                     </>
