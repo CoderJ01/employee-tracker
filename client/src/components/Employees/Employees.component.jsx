@@ -16,15 +16,13 @@ function Employees({ user }) {
     const [formState, setFormState] = useState({ lastname: '', firstname: '', email: '', role: '', department: '', salary: ''});
     const [errorText, setErrorText] = useState('');
 
-    console.log(user.employees[0]);
-
     function handleChange(e) {
         trackInput(e, formState, setFormState);
     }
 
     function handleSubmit(e) {
         e.preventDefault();
-        processSubmission(e, formState, setErrorText);
+        processSubmission(e, formState, setErrorText, user);
     }
 
     function handleDelete() {
