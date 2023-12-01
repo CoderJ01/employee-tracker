@@ -12,8 +12,6 @@ const baseURL_server = import.meta.env.VITE_SERVER_URL;
 
 // GET
 export function useFetch(route, user = false) {
-    console.log(route);
-    console.log(user);
     const [data, setData] = useState([]);
 
     const getInfo = useCallback(async() => {
@@ -33,16 +31,12 @@ export function useFetch(route, user = false) {
         getInfo();
     }, [getInfo]);
 
-    console.log(data);
     return data;
 }
 
 function getUser(response, setData) {
     let userCookie = cookie.get('employee-tracker-cookie');
     for(let i = 0; i < response.data.length; i++) {
-        console.log(response.data[i]);
-        console.log(response.data[i].sessionCookie);
-        console.log(userCookie);
         if(response.data[i].sessionCookie === userCookie) {
             setData(response.data[i]);
         }
