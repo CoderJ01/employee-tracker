@@ -38,7 +38,7 @@ header a:active {
         margin-right: 2vw;
     }
 
-    .login,
+    .header-login,
     .header-logout {
         margin-top: 10px;
     }
@@ -54,7 +54,7 @@ header a:active {
         display: none;
     }
 
-    .login {
+    .header-login {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -70,7 +70,7 @@ header a:active {
 
 /* iPad Air */
 @media screen and (max-width: 820px) {
-    .login {
+    .header-login {
         margin-left: 37%;
         width: 26%;
     }
@@ -78,7 +78,7 @@ header a:active {
 
 /* Surface Duo */
 @media screen and (max-width: 540px) {
-    .login {
+    .header-login {
         margin-left: 31%;
         width: 38%;
     }
