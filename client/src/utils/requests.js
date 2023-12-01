@@ -11,12 +11,15 @@ import cookie from 'js-cookie';
 const baseURL_server = import.meta.env.VITE_SERVER_URL;
 
 // GET
-export function getInfo(route, user = false) {
+export function useFetch(route, user = false) {
+    console.log(route);
+    console.log(user);
     const [data, setData] = useState([]);
 
     const getInfo = useCallback(async() => {
         try {
             const response = await axios.get(`${baseURL_server}/${route}`);
+            console.log(response);
     
             if(user) getUser(response, setData);
             else setData(response);
@@ -24,19 +27,23 @@ export function getInfo(route, user = false) {
         catch(error) {
             console.log(error);
         }
-    }, [data]);
+    }, [route]);
 
     useEffect(() => {
         getInfo();
     }, [getInfo]);
 
+    console.log(data);
     return data;
 }
 
 function getUser(response, setData) {
     let userCookie = cookie.get('employee-tracker-cookie');
     for(let i = 0; i < response.data.length; i++) {
-        if(response.data[i].randomString === userCookie) {
+        console.log(response.data[i]);
+        console.log(response.data[i].sessionCookie);
+        console.log(userCookie);
+        if(response.data[i].sessionCookie === userCookie) {
             setData(response.data[i]);
         }
     }
