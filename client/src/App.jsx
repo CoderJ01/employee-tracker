@@ -24,8 +24,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/dashboard' element={<Dashboard/>}/>
-          <Route path='/register' element={<Register/>}/>
-          <Route path='/login' element={<Login/>}/>
+          <Route path='/register' element={data.length === 0 ? <Register/> : <Navigate to='/dashboard'/>}/>
+          <Route path='/login' element={data.length === 0 ? <Login/> : <Navigate to='/dashboard'/>}/>
         </Routes>
       </BrowserRouter>
     </div>
