@@ -26,7 +26,7 @@ function Login() {
                 <h2>Login</h2>
                 <br/>
                 <div>
-                    <label htmlFor='username'>Username:</label><br/>
+                    <label htmlFor='username'>Username or Email:</label><br/>
                     <input type='text' name='username' defaultValue={formState.username} onChange={handleChange}/>
                 </div>
                 <br/>
