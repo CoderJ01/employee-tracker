@@ -5,11 +5,11 @@ import './Dashboard.style.css';
 import Employees from '../../components/Employees/Employees.component';
 import Tasks from '../../components/Tasks/Tasks.component';
 
-function Dashboard() {
+function Dashboard({ user }) {
     return (
         <div className='dashboard'>
-            <Employees/>
-            <Tasks/>
+            <Employees user={user}/>
+            <Tasks user={user}/>
         </div>
     );
 }
