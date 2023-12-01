@@ -23,7 +23,7 @@ export function trackInput(e, formState, setFormState) {
     }
 }
 
-export function processSubmission(e, form, setErrorText) {
+export function processSubmission(e, form, setErrorText, user) {
     e.preventDefault();
     
     if(form.lastname === '' || form.firstname === '' || form.email === '' || form.role === '' || form.department === '' || form.salary === '') {
@@ -43,7 +43,7 @@ export function processSubmission(e, form, setErrorText) {
     
     setErrorText('');
 
-    postInfo('', form, '');
+    postInfo(`employees/${user.id}`, form, setErrorText);
 }
 
 export function deleteEmployee(id) {
