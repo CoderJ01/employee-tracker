@@ -31,9 +31,12 @@ function Header({ user }) {
                 ) : 
                 (
                     <>
-                    <text className='header-blank-logout'>Logout ({user?.username})</text>
-                    <h1>Employee Tracker</h1>
-                    <text className='header-logout' onClick={handleLogout}>Logout ({user?.username})</text>
+                    <text className='header-blank-logout'>Logout</text>
+                    <div>
+                        <h1>Employee Tracker</h1>
+                        <text>Hello, <span style={{ fontStyle: 'italic' }}>{user?.username}</span></text>
+                    </div>
+                    <text className='header-logout' onClick={handleLogout}>Logout</text>
                     </>
                 )
             }
