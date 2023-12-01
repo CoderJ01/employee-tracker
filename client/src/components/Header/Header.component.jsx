@@ -31,7 +31,7 @@ function Header({ user }) {
                 ) : 
                 (
                     <>
-                    <text className='header-blank-logout'>Logout</text>
+                    <text className='header-blank-logout header-blank'>Logout</text>
                     <div>
                         <h1>Employee Tracker</h1>
                         <text>Hello, <span style={{ fontStyle: 'italic' }}>{user?.username}</span></text>
