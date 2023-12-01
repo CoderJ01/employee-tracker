@@ -11,10 +11,12 @@ import { trackInput, processSubmission, deleteEmployee } from './Employees.util'
 import AddButton from '../AddButton/AddButton.component';
 import Trashcan from '../Trashcan/Trashcan.component';
 
-function Employees() {
+function Employees({ user }) {
     const [display, setDisplay] = useState(false);
     const [formState, setFormState] = useState({ lastname: '', firstname: '', email: '', role: '', department: '', salary: ''});
     const [errorText, setErrorText] = useState('');
+
+    console.log(user.employees[0]);
 
     function handleChange(e) {
         trackInput(e, formState, setFormState);
@@ -42,42 +44,21 @@ function Employees() {
                     <th>Salary</th>
                     <th></th>
                 </tr>
-                <tr>
-                    <td>Smith</td>
-                    <td>John</td>
-                    <td>smith.john@email.com</td>
-                    <td>Software Engineer</td>
-                    <td>Information Technology</td>
-                    <td>$90,000</td>
-                    <td className='ed-delete' onClick={handleDelete}><Trashcan/></td>
-                </tr>
-                <tr>
-                    <td>Smith</td>
-                    <td>John</td>
-                    <td>smith.john@email.com</td>
-                    <td>Software Engineer</td>
-                    <td>Information Technology</td>
-                    <td>$90,000</td>
-                    <td className='ed-delete' onClick={handleDelete}><Trashcan/></td>
-                </tr>
-                <tr>
-                    <td>Smith</td>
-                    <td>John</td>
-                    <td>smith.john@email.com</td>
-                    <td>Software Engineer</td>
-                    <td>Information Technology</td>
-                    <td>$90,000</td>
-                    <td className='ed-delete' onClick={handleDelete}><Trashcan/></td>
-                </tr>
-                <tr>
-                    <td>Smith</td>
-                    <td>John</td>
-                    <td>smith.john@email.com</td>
-                    <td>Software Engineer</td>
-                    <td>Information Technology</td>
-                    <td>$90,000</td>
-                    <td className='ed-delete' onClick={handleDelete}><Trashcan/></td>
-                </tr>
+                { 
+                    user?.employees?.map(employee => {
+                        return (
+                            <tr>
+                                <td>{employee.lastName}</td>
+                                <td>{employee.firstName}</td>
+                                <td>{employee.email}</td>
+                                <td>{employee.role}</td>
+                                <td>{employee.department}</td>
+                                <td>{employee.salary}</td>
+                                <td className='ed-delete' onClick={handleDelete}><Trashcan/></td>
+                            </tr>
+                        );
+                    }) 
+                }
                 {
                     !display ? ('') :
                     (
