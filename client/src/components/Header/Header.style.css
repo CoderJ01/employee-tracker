@@ -42,6 +42,10 @@ header a:active {
     .header-logout {
         margin-top: 10px;
     }
+
+    .header-logout {
+        margin-top: 20px;
+    }
 }
 
 @media screen and (max-width: 1279px) {

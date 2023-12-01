@@ -23,7 +23,7 @@ function Header({ user }) {
                         <text className='header-logout header-blank'>Login</text>
                     </div>
                     <h1>Employee Tracker</h1>
-                    <div className='login'>
+                    <div className='header-login'>
                         <a href={`${import.meta.env.VITE_CLIENT_URL}/register`} className='header-logout'>Register</a>
                         <a href={`${import.meta.env.VITE_CLIENT_URL}/login`} className='header-logout'>Login</a>
                     </div>
