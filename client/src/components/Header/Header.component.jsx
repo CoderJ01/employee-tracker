@@ -10,6 +10,8 @@ function Header({ user }) {
         removeCookie();
     }
 
+    console.log(user);
+
     return(
         <header>
             {
@@ -29,9 +31,9 @@ function Header({ user }) {
                 ) : 
                 (
                     <>
-                    <text className='header-blank-logout'>Logout</text>
+                    <text className='header-blank-logout'>Logout ({user?.username})</text>
                     <h1>Employee Tracker</h1>
-                    <text className='header-logout' onClick={handleLogout}>Logout</text>
+                    <text className='header-logout' onClick={handleLogout}>Logout ({user?.username})</text>
                     </>
                 )
             }
