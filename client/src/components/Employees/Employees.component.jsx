@@ -25,11 +25,6 @@ function Employees({ user }) {
         processSubmission(e, formState, setErrorText, user);
     }
 
-    function handleDelete() {
-        console.log('test');
-        deleteEmployee('');
-    }
-
     return (
         <div className='employees'>
             <table className='employees-desktop'>
@@ -52,7 +47,7 @@ function Employees({ user }) {
                                 <td>{toTitleCase(employee.role)}</td>
                                 <td>{toTitleCase(employee.department)}</td>
                                 <td>{employee.salary}</td>
-                                <td className='ed-delete' onClick={handleDelete}><Trashcan/></td>
+                                <td className='ed-delete' onClick={() => deleteEmployee(employee.id)}><Trashcan/></td>
                             </tr>
                         );
                     }) 
@@ -103,7 +98,7 @@ function Employees({ user }) {
                             </tr>
                             <tr>
                                 <th>Delete?</th>
-                                <td className='ed-delete' onClick={handleDelete}><Trashcan/></td>
+                                <td className='ed-delete' onClick={() => deleteEmployee(employee.id)}><Trashcan/></td>
                             </tr>
                         </table>
                     )
