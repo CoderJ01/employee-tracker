@@ -5,7 +5,7 @@ import { useState } from 'react';
 import './Employees.style.css';
 
 // util
-import { trackInput, processSubmission, deleteEmployee } from './Employees.util';
+import { trackInput, processSubmission, deleteEmployee, toTitleCase } from './Employees.util';
 
 // components
 import AddButton from '../AddButton/AddButton.component';
@@ -46,11 +46,11 @@ function Employees({ user }) {
                     user?.employees?.map(employee => {
                         return (
                             <tr>
-                                <td>{employee.lastName}</td>
-                                <td>{employee.firstName}</td>
+                                <td>{toTitleCase(employee.lastName)}</td>
+                                <td>{toTitleCase(employee.firstName)}</td>
                                 <td>{employee.email}</td>
-                                <td>{employee.role}</td>
-                                <td>{employee.department}</td>
+                                <td>{toTitleCase(employee.role)}</td>
+                                <td>{toTitleCase(employee.department)}</td>
                                 <td>{employee.salary}</td>
                                 <td className='ed-delete' onClick={handleDelete}><Trashcan/></td>
                             </tr>
@@ -79,11 +79,11 @@ function Employees({ user }) {
                         <table className='employees-mobile'>
                             <tr>
                                 <th>Last Name:</th>
-                                <td>{employee.lastName}</td>
+                                <td>{toTitleCase(employee.lastName)}</td>
                             </tr>
                             <tr>
                                 <th>First Name:</th>
-                                <td>{employee.firstName}</td>
+                                <td>{toTitleCase(employee.firstName)}</td>
                             </tr>
                             <tr>
                                 <th>Email:</th>
@@ -91,11 +91,11 @@ function Employees({ user }) {
                             </tr>
                             <tr>
                                 <th>Role:</th>
-                                <td>{employee.role}</td>
+                                <td>{toTitleCase(employee.role)}</td>
                             </tr>
                             <tr>
                                 <th>Department:</th>
-                                <td>{employee.department}</td>
+                                <td>{toTitleCase(employee.department)}</td>
                             </tr>
                             <tr>
                                 <th>Salary:</th>
