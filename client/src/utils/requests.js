@@ -110,5 +110,5 @@ export async function deleteInfo(route) {
     catch(error) {
         console.log(error);
     }
-    if(route.includes('employees')) location.reload();
+    if(route.includes('employees') || route.includes('tasks')) location.reload();
 }
