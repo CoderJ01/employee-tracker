@@ -11,7 +11,7 @@ import { trackInput, processSubmission, deleteTask } from './Tasks.util';
 import AddButton from '../AddButton/AddButton.component';
 import Trashcan from '../Trashcan/Trashcan.component';
 
-function Tasks() {
+function Tasks({ user }) {
     const [display, setDisplay] = useState(false);
     const [formState, setFormState] = useState({ title: '', description: '' });
     const [errorText, setErrorText] = useState('');
@@ -30,35 +30,25 @@ function Tasks() {
         deleteTask('');
     }
 
+    console.log(user);
+
     return (
         <div className='tasks'>
-            <div className='task'>
-                <h2>Task Title</h2>
-                <p>Description</p>
-                <p>Date</p>
-                <div className='task-delete' onClick={handleDelete}>
-                    <Trashcan/>
-                </div>
-                <br/>
-            </div>
-            <div className='task'>
-                <h2>Task Title</h2>
-                <p>Description</p>
-                <p>Date</p>
-                <br/>
-            </div>
-            <div className='task'>
-                <h2>Task Title</h2>
-                <p>Description</p>
-                <p>Date</p>
-                <br/>
-            </div>
-            <div className='task'>
-                <h2>Task Title</h2>
-                <p>Description</p>
-                <p>Date</p>
-                <br/>
-            </div>
+            {
+                user?.tasks?.map(task => {
+                    return (
+                        <div className='task'>
+                            <h2>{task.title}</h2>
+                            <p>{task.description}</p>
+                            <p>{task.dateCreated.substring(0, 10)}</p>
+                            <div className='task-delete' onClick={handleDelete}>
+                                <Trashcan/>
+                            </div>
+                            <br/>
+                        </div>
+                    )
+                })
+            }
             {
                 !display ? ('') :
                 (
