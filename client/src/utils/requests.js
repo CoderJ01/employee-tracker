@@ -60,6 +60,9 @@ export function postInfo(route, infoObj, setErrorText) {
     })
     .then(response => {
         console.log(response);
+        if(route.includes('employees')) {
+            location.reload();
+        }
     })
     .catch(error => {
         console.log(error);
