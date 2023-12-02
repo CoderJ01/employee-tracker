@@ -25,13 +25,6 @@ function Tasks({ user }) {
         processSubmission(e, formState, setErrorText);
     }
 
-    function handleDelete() {
-        console.log('testing');
-        deleteTask('');
-    }
-
-    console.log(user);
-
     return (
         <div className='tasks'>
             {
@@ -41,7 +34,7 @@ function Tasks({ user }) {
                             <h2>{task.title}</h2>
                             <p>{task.description}</p>
                             <p>{task.dateCreated.substring(0, 10)}</p>
-                            <div className='task-delete' onClick={handleDelete}>
+                            <div className='task-delete' onClick={() => deleteTask(task.id)}>
                                 <Trashcan/>
                             </div>
                             <br/>
