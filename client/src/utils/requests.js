@@ -112,4 +112,7 @@ export async function deleteInfo(route) {
     catch(error) {
         console.log(error);
     }
+    if(route.includes('employees')) {
+        location.reload();
+    }
 }
