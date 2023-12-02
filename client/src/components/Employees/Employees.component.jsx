@@ -5,7 +5,7 @@ import { useState } from 'react';
 import './Employees.style.css';
 
 // util
-import { trackInput, processSubmission, deleteEmployee, toTitleCase } from './Employees.util';
+import { trackInput, processSubmission, deleteEmployee, toTitleCase, addCommasToNumber } from './Employees.util';
 
 // components
 import AddButton from '../AddButton/AddButton.component';
@@ -46,7 +46,7 @@ function Employees({ user }) {
                                 <td>{employee.email}</td>
                                 <td>{toTitleCase(employee.role)}</td>
                                 <td>{toTitleCase(employee.department)}</td>
-                                <td>{employee.salary}</td>
+                                <td>${addCommasToNumber(employee.salary)}</td>
                                 <td className='ed-delete' onClick={() => deleteEmployee(employee.id)}><Trashcan/></td>
                             </tr>
                         );
@@ -94,7 +94,7 @@ function Employees({ user }) {
                             </tr>
                             <tr>
                                 <th>Salary:</th>
-                                <td>{employee.salary}</td>
+                                <td>${addCommasToNumber(employee.salary)}</td>
                             </tr>
                             <tr>
                                 <th>Delete?</th>
