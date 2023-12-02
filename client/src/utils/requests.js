@@ -60,9 +60,7 @@ export function postInfo(route, infoObj, setErrorText) {
     })
     .then(response => {
         console.log(response);
-        if(route.includes('employees')) {
-            location.reload();
-        }
+        if(route.includes('employees')) location.reload(); 
     })
     .catch(error => {
         console.log(error);
@@ -112,7 +110,5 @@ export async function deleteInfo(route) {
     catch(error) {
         console.log(error);
     }
-    if(route.includes('employees')) {
-        location.reload();
-    }
+    if(route.includes('employees')) location.reload();
 }
