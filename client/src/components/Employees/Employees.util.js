@@ -47,7 +47,7 @@ export function processSubmission(e, form, setErrorText, user) {
 }
 
 export function deleteEmployee(id) {
-    deleteInfo('', id);
+    deleteInfo(`employees/${id}`);
 }
 
 export function toTitleCase(employeeInfo) {
