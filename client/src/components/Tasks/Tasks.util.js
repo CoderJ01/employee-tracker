@@ -23,5 +23,5 @@ export function processSubmission(e, form, setErrorText) {
 }
 
 export function deleteTask(id) {
-    deleteInfo('', id);
+    deleteInfo(`tasks/${id}`);
 }
