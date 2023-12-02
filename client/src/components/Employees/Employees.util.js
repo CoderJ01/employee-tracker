@@ -50,3 +50,9 @@ export function deleteEmployee(id) {
     deleteInfo('', id);
 }
 
+export function toTitleCase(employeeInfo) {
+    return employeeInfo.replace(/\w\S*/g, function(txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+} 
+
