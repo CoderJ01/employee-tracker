@@ -73,36 +73,42 @@ function Employees({ user }) {
                     )
                 }
             </table>
-            <table className='employees-mobile'>
-                <tr>
-                    <th>Last Name:</th>
-                    <td>Smith</td>
-                </tr>
-                <tr>
-                    <th>First Name:</th>
-                    <td>John</td>
-                </tr>
-                <tr>
-                    <th>Email:</th>
-                    <td>smith.john@email.com</td>
-                </tr>
-                <tr>
-                    <th>Role:</th>
-                    <td>Software Engineer</td>
-                </tr>
-                <tr>
-                    <th>Department:</th>
-                    <td>Information Technology</td>
-                </tr>
-                <tr>
-                    <th>Salary:</th>
-                    <td>$90,000</td>
-                </tr>
-                <tr>
-                    <th>Delete?</th>
-                    <td className='ed-delete' onClick={handleDelete}><Trashcan/></td>
-                </tr>
-            </table>
+            {
+                user?.employees?.map(employee => {
+                    return (
+                        <table className='employees-mobile'>
+                            <tr>
+                                <th>Last Name:</th>
+                                <td>{employee.lastName}</td>
+                            </tr>
+                            <tr>
+                                <th>First Name:</th>
+                                <td>{employee.firstName}</td>
+                            </tr>
+                            <tr>
+                                <th>Email:</th>
+                                <td>{employee.email}</td>
+                            </tr>
+                            <tr>
+                                <th>Role:</th>
+                                <td>{employee.role}</td>
+                            </tr>
+                            <tr>
+                                <th>Department:</th>
+                                <td>{employee.department}</td>
+                            </tr>
+                            <tr>
+                                <th>Salary:</th>
+                                <td>{employee.salary}</td>
+                            </tr>
+                            <tr>
+                                <th>Delete?</th>
+                                <td className='ed-delete' onClick={handleDelete}><Trashcan/></td>
+                            </tr>
+                        </table>
+                    )
+                })
+            }
             {
                 !display ? ('') : 
                 (
