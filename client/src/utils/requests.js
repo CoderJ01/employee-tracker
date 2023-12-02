@@ -102,13 +102,11 @@ function displayLoginErrorMessage(error, message, output, setErrorText) {
 }
 
 // DELETE
-export async function deleteInfo(route, id) {
-    if(id) {
-        try {
-            await axios.delete(`${baseURL_server}/${route}`);
-        }
-        catch(error) {
-            console.log(error);
-        }
+export async function deleteInfo(route) {
+    try {
+        await axios.delete(`${baseURL_server}/${route}`);
+    }
+    catch(error) {
+        console.log(error);
     }
 }
