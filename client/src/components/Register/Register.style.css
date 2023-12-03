@@ -31,7 +31,18 @@
 
 /* Desktop */
 @media screen and (min-width: 1280px) {
+    @keyframes slideright {
+        from {
+          margin-left: -35%;
+        }
+        to {
+            margin-left: 35%;
+        }
+    }
+
     .register {
+        animation-name: slideright;
+        animation-duration: 1500ms;
         background: rgb(189,88,109);
         background: linear-gradient(90deg, rgba(189,88,109,0.4) 0%, rgba(255,45,83,0.4) 50%, rgba(189,88,109,0.4) 100%);
         border-radius: 10px;
