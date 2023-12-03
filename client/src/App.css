@@ -31,7 +31,9 @@
     textarea,
     button,
     label,
-    i {
+    i,
+    select,
+    option {
         font-size: 25px;
     }
 }
@@ -76,7 +78,9 @@
     textarea,
     button,
     label,
-    i {
+    i,
+    select,
+    option {
         font-size: 20px;
     }
 }
