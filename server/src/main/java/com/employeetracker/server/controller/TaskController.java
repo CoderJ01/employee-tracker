@@ -7,6 +7,7 @@ import com.employeetracker.server.model.Task;
 import com.employeetracker.server.repository.EmployeeRepository;
 import com.employeetracker.server.repository.EmployerRepository;
 import com.employeetracker.server.repository.TaskRepository;
+import com.employeetracker.server.validation.ValidateInput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,15 +30,14 @@ public class TaskController {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    @PostMapping("/tasks/{employer_id}/{employee_id}")
+    @PostMapping("/tasks/{employer_id}/{employee_email}")
     public Task createTask(@PathVariable Long employer_id,
-                           @PathVariable Long employee_id,
+                           @PathVariable String employee_email,
                            @RequestBody Task task) {
         Employer employer = employerRepository.findById(employer_id)
                 .orElseThrow(() -> new ResourceNotFoundException("Employer with " + " id " + employer_id + " does not exist"));
 
-        Employee employee = employeeRepository.findById(employee_id)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee with " + " id " + employee_id + " does not exist"));
+        Employee employee = ValidateInput.selectEmployeeForTask(employer.getEmployees(), employee_email);
 
         task.setDateCreated(LocalDateTime.now());
         task.setEmployer(employer);
