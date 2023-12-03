@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class CreateUsername {
     public static String setUsername(String firstname, String lastname) {
-        String username = (firstname + lastname).trim().toLowerCase() + "_" + createRandomString(5);
+        String username = (firstname + lastname).trim().toLowerCase() + createRandomString(3);
         return username;
     }
 
