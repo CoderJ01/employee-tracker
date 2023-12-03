@@ -41,6 +41,10 @@
     opacity: 0.7;
 }
 
+select {
+    border-radius: 10px;
+}
+
 /* Desktop */
 @media screen and (min-width: 1280px) {
     .tasks {
@@ -53,6 +57,12 @@
         margin-left: 5%;
         width: 90%;
     }
+
+    select {
+        background-color: white;
+        border: 1px solid rgb(227, 45, 83);
+        border-radius: 10px;
+    }
 }
 
 @media screen and (max-width: 1279px) {
@@ -60,6 +70,10 @@
         background-color: white;
         margin-left: 25%;
         width: 50%;
+    }
+
+    select {
+        background-color: rgba(227, 45, 83, 0.1);
     }
 }
 
