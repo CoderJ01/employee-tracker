@@ -42,7 +42,7 @@ public class TaskController {
         task.setDateCreated(LocalDateTime.now());
         task.setEmployer(employer);
         task.setEmployee(employee);
-        task.setEmployeeName(employee.getLastName() + ", " + employee.getFirstName());
+        task.setEmployeeName(employee.getFirstName() + " " + employee.getLastName());
 
         return taskRepository.save(task);
     }
