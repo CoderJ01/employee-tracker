@@ -69,6 +69,7 @@
     } 
 }
 
+/* Mobile */
 @media screen and (max-width: 1279px) {
     .register {
         background-color: white;

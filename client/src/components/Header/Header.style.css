@@ -52,6 +52,7 @@ header a:active {
     }
 }
 
+/* Mobile */
 @media screen and (max-width: 1279px) {
     header {
         padding: 1vh 0 1vh 0;

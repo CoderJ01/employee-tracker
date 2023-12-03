@@ -12,6 +12,7 @@
     }
 }
 
+/* Mobile */
 @media screen and (max-width: 1279px) {
     .access-denied {
         font-size: 3rem;
