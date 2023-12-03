@@ -34,6 +34,9 @@ public class Task {
     @JoinColumn(name = "employee_id")
     private Employee employee;
 
+    @JoinColumn(name = "employee_name")
+    private String employee_name;
+
     public Task () {
 
     }
@@ -72,6 +75,10 @@ public class Task {
         return employee;
     }
 
+    public String getEmployeeName() {
+        return employee_name;
+    }
+
     public void setId(long id) {
         this.id = id;
     }
@@ -99,4 +106,6 @@ public class Task {
     public void setEmployee(Employee employee) {
         this.employee = employee;
     }
+
+    public void setEmployeeName(String employee_name) { this.employee_name = employee_name; }
 }
