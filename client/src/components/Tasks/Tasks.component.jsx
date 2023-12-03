@@ -13,7 +13,7 @@ import Trashcan from '../Trashcan/Trashcan.component';
 
 function Tasks({ user }) {
     const [display, setDisplay] = useState(false);
-    const [formState, setFormState] = useState({ title: '', description: '' });
+    const [formState, setFormState] = useState({ title: '', description: '', email: '' });
     const [errorText, setErrorText] = useState('');
 
     function handleChange(e) {
@@ -22,7 +22,7 @@ function Tasks({ user }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        processSubmission(e, formState, setErrorText);
+        processSubmission(e, formState, setErrorText, user);
     }
 
     return (
@@ -51,6 +51,18 @@ function Tasks({ user }) {
                         <br/>
                         <p style={{ fontWeight: 'bold' }}>Description:</p>
                         <textarea maxLength={200} name='description' onChange={handleChange}/>
+                        <br/>
+                        <select 
+                            defaultValue={formState.email} 
+                            onChange={handleChange}
+                            name='email'
+                        >
+                            {user?.employees?.map(value => (
+                            <option value={value.email} key={value.email}>
+                                {value.email}
+                            </option>
+                            ))}
+                        </select>
                         <br/>
                         <div className='task-submit-button' onClick={handleSubmit}>
                             <button>Submit</button>
