@@ -34,6 +34,13 @@ public class Task {
     @JoinColumn(name = "employee_id")
     private Employee employee;
 
+    /*
+    The column below enables the retrieval of the employee that a task belongs to
+    The proper way to achieve this would be to remove the @JsonIgnore annotation over
+    the column above. However, if said annotation is removed, a task cannot be created.
+    The following error message is displayed: Cannot call sendError() after the
+    response has been committed
+    */
     @JoinColumn(name = "employee_name")
     private String employee_name;
 
