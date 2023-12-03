@@ -27,7 +27,7 @@ export function processSubmission(e, form, setErrorText, user) {
     
     setErrorText('');
 
-    postInfo(`tasks/${user.id}/${form.email}`);
+    postInfo(`tasks/${user.id}/${form.email}`, form, setErrorText);
 }
 
 export function deleteTask(id) {
