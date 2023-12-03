@@ -9,7 +9,12 @@ function Dashboard({ user }) {
     return (
         <div className='dashboard'>
             <Employees user={user}/>
-            <Tasks user={user}/>
+            {
+                user?.employees?.length === 0 ? ('') :
+                (
+                    <Tasks user={user}/> 
+                )
+            }
         </div>
     );
 }
