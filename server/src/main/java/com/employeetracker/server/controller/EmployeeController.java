@@ -33,8 +33,7 @@ public class EmployeeController {
         Employer employer = employerRepository.findById(employer_id)
                 .orElseThrow(() -> new ResourceNotFoundException("Employer with " + " id " + employer_id + " does not exist"));
 
-        int count = CreateUsername.checkDuplicateNames(getAllEmployees(employer_id), employee);
-        employee.setUsername(CreateUsername.setUsername(employee.getFirstName(), employee.getLastName(), count));
+        employee.setUsername(CreateUsername.setUsername(employee.getFirstName(), employee.getLastName()));
         employee.setDateCreated(LocalDateTime.now());
         employee.setEmployer(employer);
 
