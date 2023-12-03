@@ -60,7 +60,7 @@ export function postInfo(route, infoObj, setErrorText) {
     })
     .then(response => {
         console.log(response);
-        if(route.includes('employees')) location.reload(); 
+        if(route.includes('employees') || route.includes('tasks')) location.reload(); 
     })
     .catch(error => {
         console.log(error);
