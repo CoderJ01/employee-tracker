@@ -32,9 +32,18 @@ function Tasks({ user }) {
                     return (
                         <div className='task'>
                             <h2>{task.title}</h2>
-                            <p><span style={{ fontWeight: 'bold' }}>Description: </span>{task.description}</p>
-                            <p><span style={{ fontWeight: 'bold' }}>For: </span><span style={{ fontStyle: 'italic' }}>{task.employeeName}</span></p>
-                            <p><span style={{ fontWeight: 'bold' }}>Date: </span>{task.dateCreated.substring(0, 10)}</p>
+                            <p>
+                                <span style={{ fontWeight: 'bold' }}>Description: </span>
+                                {task.description}
+                            </p>
+                            <p>
+                                <span style={{ fontWeight: 'bold' }}>For: </span>
+                                <span style={{ fontStyle: 'italic' }}>{task.employeeName}</span>
+                            </p>
+                            <p>
+                                <span style={{ fontWeight: 'bold' }}>Date: </span>
+                                {task.dateCreated.substring(0, 10)}
+                            </p>
                             <div className='task-delete' onClick={() => deleteTask(task.id)}>
                                 <Trashcan/>
                             </div>
