@@ -7,6 +7,7 @@ This application allows business owners to keep track of employees.
 Client:
 * Visual Studio Code
 * React JS / Vite
+
 Server:
 * IntelliJ IDEA Education Edition
 * Spring Boot (Java/Mavan)
