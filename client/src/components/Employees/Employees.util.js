@@ -46,8 +46,8 @@ export function processSubmission(e, form, setErrorText, user) {
     postInfo(`employees/${user.id}`, form, setErrorText);
 }
 
-export function deleteEmployee(id) {
-    deleteInfo(`employees/${id}`);
+export function deleteEmployee(id, setErrorText) {
+    deleteInfo(`employees/${id}`, setErrorText);
 }
 
 export function toTitleCase(employeeInfo) {
