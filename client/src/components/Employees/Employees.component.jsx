@@ -47,7 +47,7 @@ function Employees({ user }) {
                                 <td>{toTitleCase(employee.role)}</td>
                                 <td>{toTitleCase(employee.department)}</td>
                                 <td>${addCommasToNumber(employee.salary)}</td>
-                                <td className='ed-delete' onClick={() => deleteEmployee(employee.id)}><Trashcan/></td>
+                                <td className='ed-delete' onClick={() => deleteEmployee(employee.id, setErrorText)}><Trashcan/></td>
                             </tr>
                         );
                     }) 
@@ -98,7 +98,7 @@ function Employees({ user }) {
                             </tr>
                             <tr>
                                 <th>Delete?</th>
-                                <td className='ed-delete' onClick={() => deleteEmployee(employee.id)}><Trashcan/></td>
+                                <td className='ed-delete' onClick={() => deleteEmployee(employee.id, setErrorText)}><Trashcan/></td>
                             </tr>
                         </table>
                     )
