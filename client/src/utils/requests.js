@@ -103,12 +103,15 @@ function displayLoginErrorMessage(error, message, output, setErrorText) {
 }
 
 // DELETE
-export async function deleteInfo(route) {
+export async function deleteInfo(route, setErrorText) {
     try {
         await axios.delete(`${baseURL_server}/${route}`);
     }
     catch(error) {
         console.log(error);
+        if(error.response.data.trace.toString().includes('is still referenced from table'))
+        setErrorText('The employee cannot be deleted! Delete the task(s) made for said employee first!');
+        return;
     }
     if(route.includes('employees') || route.includes('tasks')) location.reload();
 }
