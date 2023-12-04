@@ -104,6 +104,7 @@ function Employees({ user }) {
                     )
                 })
             }
+            <text className='employees-error'>{errorText}</text>
             {
                 !display ? ('') : 
                 (
@@ -134,7 +135,6 @@ function Employees({ user }) {
                             <td><input type='text' name='salary' defaultValue={formState.salary} onChange={handleChange}/></td>
                         </tr>
                     </table>
-                    <text className='employees-error'>{errorText}</text>
                     <div className='employees-submit-button'>
                         <button onClick={handleSubmit}>Submit</button>
                     </div>
