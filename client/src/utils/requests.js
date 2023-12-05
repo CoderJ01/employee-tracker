@@ -17,8 +17,6 @@ export function useFetch(route, user = false) {
     const getInfo = useCallback(async() => {
         try {
             const response = await axios.get(`${baseURL_server}/${route}`);
-            console.log(response);
-    
             if(user) getUser(response, setData);
             else setData(response);
         }
