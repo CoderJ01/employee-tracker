@@ -4,6 +4,9 @@ import { useState, useEffect, useCallback } from 'react';
 // setCookie
 import setCookie from './setCookie';
 
+// inputValidation
+import { displayErrorMessage, displayRegisterErrorMessage } from './errorMessage';
+
 // other imports
 import axios from 'axios';
 import cookie from 'js-cookie';
@@ -67,16 +70,6 @@ export function postInfo(route, infoObj, setErrorText) {
     });
 }
 
-function displayRegisterErrorMessage(error, constraint, infoType, setErrorText, takenType) {
-    // constraint generated from Spring Boot (Java/Maven) backend and PostgreSQL database
-    // trace = backend response
-    if(error.response.data.trace.toString().includes(constraint) 
-    && error.response.data.trace.toString().includes(infoType))
-    {
-        setErrorText(`This ${takenType} is already taken!`);
-    }
-}
-
 export function loginUser(route, username, password, setErrorText) {
     axios.post(`${baseURL_server}/${route}`, 
     {
@@ -92,12 +85,6 @@ export function loginUser(route, username, password, setErrorText) {
         displayErrorMessage(error, 'java.lang.RuntimeException: Username or email does not exists!', 'Username or email does not exist!', setErrorText);
         displayErrorMessage(error, 'java.lang.RuntimeException: Wrong password!', 'The password does not match the user!', setErrorText);
     });
-}
-
-function displayErrorMessage(error, message, output, setErrorText) {
-    if(error.response.data.trace.toString().includes(message)) {
-        setErrorText(output);
-    }
 }
 
 // DELETE
