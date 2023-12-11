@@ -18,7 +18,6 @@ function Register() {
     }
 
     function handleSubmit(e) {
-        e.preventDefault();
         processSubmission(e, formState, setErrorText);
     }
 

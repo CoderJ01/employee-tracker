@@ -21,7 +21,6 @@ function Tasks({ user }) {
     }
 
     function handleSubmit(e) {
-        e.preventDefault();
         processSubmission(e, formState, setErrorText, user);
     }
 

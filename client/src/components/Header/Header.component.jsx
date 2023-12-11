@@ -6,11 +6,8 @@ import removeCookie from './Header.util';
 
 function Header({ user }) {
     function handleLogout(e) {
-        e.preventDefault();
-        removeCookie();
+        removeCookie(e);
     }
-
-    console.log(user);
 
     return(
         <header>
