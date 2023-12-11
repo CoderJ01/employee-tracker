@@ -89,12 +89,12 @@ export function loginUser(route, username, password, setErrorText) {
     })
     .catch(error => {
         console.log(error);
-        displayLoginErrorMessage(error, 'java.lang.RuntimeException: Username or email does not exists!', 'Username or email does not exist!', setErrorText);
-        displayLoginErrorMessage(error, 'java.lang.RuntimeException: Wrong password!', 'The password does not match the user!', setErrorText);
+        displayErrorMessage(error, 'java.lang.RuntimeException: Username or email does not exists!', 'Username or email does not exist!', setErrorText);
+        displayErrorMessage(error, 'java.lang.RuntimeException: Wrong password!', 'The password does not match the user!', setErrorText);
     });
 }
 
-function displayLoginErrorMessage(error, message, output, setErrorText) {
+function displayErrorMessage(error, message, output, setErrorText) {
     if(error.response.data.trace.toString().includes(message)) {
         setErrorText(output);
     }
