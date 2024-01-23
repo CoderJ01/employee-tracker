@@ -65,8 +65,11 @@ export function postInfo(route, infoObj, setErrorText) {
     })
     .catch(error => {
         console.log(error);
-        displayRegisterErrorMessage(error, 'duplicate key value violates unique constraint', '(email)', setErrorText, 'email');
-        displayRegisterErrorMessage(error, 'duplicate key value violates unique constraint', '(phone_number)', setErrorText, 'phone number');
+        // register
+        displayRegisterErrorMessage(error, 'Duplicate', `${import.meta.env.VITE_DUPLICATE_EMAIL}`, setErrorText, 'email');
+        displayRegisterErrorMessage(error, 'Duplicate', `${import.meta.env.VITE_DUPLICATE_NUMBER}`, setErrorText, 'phone number');
+        // create employee
+        displayRegisterErrorMessage(error, 'Duplicate', `${import.meta.env.VITE_DUPLICATE_EMAIL_TABLE}`, setErrorText, 'email');
     });
 }
 
@@ -94,7 +97,7 @@ export async function deleteInfo(route, setErrorText) {
     }
     catch(error) {
         console.log(error);
-        if(error.response.data.trace.toString().includes('is still referenced from table'))
+        if(error.response.data.trace.toString().includes('`tasks`') && error.response.data.trace.toString().includes('REFERENCES'))
         setErrorText('The employee cannot be deleted! Delete the task(s) made for said employee first!');
         return;
     }
