@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {"http://localhost:5173", "https://employee-tracker-u47j.onrender.com"})
 @RestController
 @RequestMapping("/api/v1")
 public class TaskController {

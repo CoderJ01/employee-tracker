@@ -18,7 +18,7 @@ import com.employeetracker.server.repository.EmployerRepository;
 
 import com.employeetracker.server.generate.CreateUsername;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {"http://localhost:5173", "https://employee-tracker-u47j.onrender.com"})
 @RestController
 @RequestMapping("/api/v1")
 public class EmployeeController {
