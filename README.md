@@ -12,7 +12,7 @@ Server:
 * IntelliJ IDEA Education Edition
 * Spring Boot (Java/Mavan)
 * RESTful API
-* PostgreSQL
+* mySQL
 
 ## Screenshot of Website
 ![!Alt text](./assets/images/screenshot.png?raw=true 'Employee Tracker')
