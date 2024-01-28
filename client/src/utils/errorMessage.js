@@ -1,5 +1,5 @@
 export function displayRegisterErrorMessage(error, constraint, infoType, setErrorText, takenType) {
-    // constraint generated from Spring Boot (Java/Maven) backend and mySQL database
+    // constraint generated from Spring Boot (Java/Maven) backend and relational database
     // trace = backend response
     if(error.response.data.trace.toString().includes(constraint) 
     && error.response.data.trace.toString().includes(infoType))
