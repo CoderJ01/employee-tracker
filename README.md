@@ -17,6 +17,11 @@ Server:
 ## Screenshot of Website
 ![!Alt text](./assets/images/screenshot.png?raw=true 'Employee Tracker')
 
+## Application
+https://employee-tracker-u47j.onrender.com/
+
+If the content of the site does not appear right away, refresh the page a few times and wait about 30 seconds.
+
 ## Video Demonstration
 https://youtu.be/zVGtdBNVXvA
 
