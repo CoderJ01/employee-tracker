@@ -65,11 +65,17 @@ export function postInfo(route, infoObj, setErrorText) {
     })
     .catch(error => {
         console.log(error);
-        // register
-        displayRegisterErrorMessage(error, 'Duplicate', `${import.meta.env.VITE_DUPLICATE_EMAIL}`, setErrorText, 'email');
-        displayRegisterErrorMessage(error, 'Duplicate', `${import.meta.env.VITE_DUPLICATE_NUMBER}`, setErrorText, 'phone number');
-        // create employee
-        displayRegisterErrorMessage(error, 'Duplicate', `${import.meta.env.VITE_DUPLICATE_EMAIL_TABLE}`, setErrorText, 'email');
+        if(import.meta.env.VITE_DATABASE.toString() === 'postgreSQL') {
+            displayRegisterErrorMessage(error, 'duplicate key value violates unique constraint', '(email)', setErrorText, 'email');
+            displayRegisterErrorMessage(error, 'duplicate key value violates unique constraint', '(phone_number)', setErrorText, 'phone number');
+        }
+        else if(import.meta.env.VITE_DATABASE.toString() === 'mySQL') {
+             // register
+            displayRegisterErrorMessage(error, 'Duplicate', `${import.meta.env.VITE_DUPLICATE_EMAIL}`, setErrorText, 'email');
+            displayRegisterErrorMessage(error, 'Duplicate', `${import.meta.env.VITE_DUPLICATE_NUMBER}`, setErrorText, 'phone number');
+            // create employee
+            displayRegisterErrorMessage(error, 'Duplicate', `${import.meta.env.VITE_DUPLICATE_EMAIL_TABLE}`, setErrorText, 'email');
+        }
     });
 }
 
@@ -97,9 +103,19 @@ export async function deleteInfo(route, setErrorText) {
     }
     catch(error) {
         console.log(error);
-        if(error.response.data.trace.toString().includes('`tasks`') && error.response.data.trace.toString().includes('REFERENCES'))
-        setErrorText('The employee cannot be deleted! Delete the task(s) made for said employee first!');
-        return;
+        let toDelete = true;
+        if(import.meta.env.VITE_DATABASE.toString() === 'mySQL') {
+            if(error.response.data.trace.toString().includes('`tasks`') && error.response.data.trace.toString().includes('REFERENCES'))
+            toDelete = false;
+        }
+        else if(import.meta.env.VITE_DATABASE.toString() === 'postgreSQL') {
+            if(error.response.data.trace.toString().includes('is still referenced from table'))
+            toDelete = false;
+        }
+        if(toDelete === false) {
+            setErrorText('The employee cannot be deleted! Delete the task(s) made for said employee first!');
+            return;
+        }
     }
     if(route.includes('employees') || route.includes('tasks')) location.reload();
 }
